@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  display: inline-block;
+}
+/* Button variants */
+.btn-yellow {
+  @apply bg-primary-yellow text-black px-button-x py-button-y rounded-button hover:bg-yellow-500;
+}
+.btn-purple {
+  @apply bg-primary-purple text-white px-button-x py-button-y rounded-button hover:bg-purple-800;
+}
+.btn-white {
+  @apply bg-white text-gray-custom px-button-x py-button-y rounded-button border hover:bg-gray-100;
+}
