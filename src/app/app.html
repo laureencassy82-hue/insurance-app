@@ -12,14 +12,22 @@
       <span>Get a quote</span>
     </a>
 
-    <a 
-      [routerLink]="'/select-plan'" 
+<!-- Step 2: Select Plan -->
+    <a
       class="nav-step"
-      routerLinkActive="active-step"
-      [routerLinkActiveOptions]="{ exact: true }">
+      [routerLink]="'/select-plan'"
+      [ngClass]="{
+        'active-step': currentRoute === '/select-plan',
+        'pointer-events-none ': currentRoute === '/get-quote'
+      }"
+    >
       <span class="step-circle">2</span>
       <span>Select Plan</span>
     </a>
+
+
+
+
 
     <a 
       [routerLink]="'/my-health'" 
@@ -40,7 +48,8 @@
     </a>
   </nav>
 
-  <main class="min-h-screen bg-gray-light p-4">
+  <main class="min-h-screen bg-gray-light ">
     <router-outlet></router-outlet>
   </main>
+  <app-footer></app-footer>
 </div>

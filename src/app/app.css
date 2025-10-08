@@ -13,3 +13,5 @@
 .step-circle {
   @apply flex items-center justify-center w-6 h-6 rounded-full bg-primary-purple text-white text-xs font-bold;
 }
+
+
