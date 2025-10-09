@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule, Router, NavigationEnd } from '@angular/router';
-import { CommonModule } from '@angular/common'; // ✅ Add this line
+import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { HeaderComponent } from './components/header/header';
 import { FooterComponent } from './components/footer/footer';
+import { FormAccessGuard } from './guards/form-access-guard';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // ✅ Add CommonModule to imports
   imports: [CommonModule, RouterOutlet, RouterModule, HeaderComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
@@ -16,12 +16,12 @@ import { FooterComponent } from './components/footer/footer';
 export class AppComponent {
   currentRoute: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public formAccess: FormAccessGuard) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        // ✅ Clean URL (remove trailing slashes, params)
-        this.currentRoute = event.urlAfterRedirects.split('?')[0].split(';')[0];
+      .subscribe((event: any) => {
+        const url = (event as NavigationEnd).urlAfterRedirects || '';
+        this.currentRoute = url.split('?')[0].replace(/\/$/, '');
       });
   }
 }

@@ -10,5 +10,5 @@ export const routes: Routes = [
   { path: 'get-quote', component: GetQuoteComponent },
   { path: 'select-plan', component: SelectPlanComponent, canActivate: [FormAccessGuard] },
   { path: 'my-health', component: MyHealthComponent, canActivate: [FormAccessGuard] },
-  { path: 'comfirmation', component: ComfirmationComponent }
+  { path: 'comfirmation', component: ComfirmationComponent, canActivate: [FormAccessGuard] }
 ];

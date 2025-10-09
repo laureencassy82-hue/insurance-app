@@ -2,7 +2,8 @@
   <app-header></app-header>
 
   <!-- Navigation -->
-  <nav class="grid grid-cols-1 md:grid-cols-4 ">
+  <nav class="grid grid-cols-1 md:grid-cols-4">
+    <!-- Step 1: Get a quote -->
     <a 
       [routerLink]="'/get-quote'" 
       class="nav-step"
@@ -12,7 +13,7 @@
       <span>Get a quote</span>
     </a>
 
-<!-- Step 2: Select Plan -->
+    <!-- Step 2: Select Plan -->
     <a
       class="nav-step"
       [routerLink]="'/select-plan'"
@@ -25,14 +26,10 @@
       <span>Select Plan</span>
     </a>
 
-
-
-
-
-      <!-- Step 3: My Health -->
+    <!-- Step 3: My Health -->
     <a
-      [routerLink]="'/my-health'"
       class="nav-step"
+      [routerLink]="'/my-health'"
       [ngClass]="{
         'active-step': currentRoute === '/my-health',
         'pointer-events-none ': currentRoute === '/get-quote' || currentRoute === '/select-plan'
@@ -42,18 +39,21 @@
       <span>My Health</span>
     </a>
 
-
+    <!-- Step 4: Confirmation -->
     <a 
-      [routerLink]="'/comfirmation'" 
       class="nav-step"
-      routerLinkActive="active-step"
-      [routerLinkActiveOptions]="{ exact: true }">
+      [routerLink]="'/comfirmation'"
+      [ngClass]="{
+        'active-step': currentRoute === '/comfirmation',
+        'pointer-events-none ': currentRoute !== '/comfirmation'
+      }"
+    >
       <span class="step-circle">4</span>
       <span>Confirmation</span>
     </a>
   </nav>
 
-  <main class="min-h-screen bg-gray-light ">
+  <main class="min-h-screen bg-gray-light">
     <router-outlet></router-outlet>
   </main>
   <app-footer></app-footer>

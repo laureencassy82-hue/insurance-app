@@ -8,37 +8,34 @@ import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 export class FormAccessGuard implements CanActivate {
   private canAccessSelectPlan = false;
   private canAccessMyHealth = false;
+  private canAccessConfirmation = false;
 
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const path = route.routeConfig?.path;
 
-    // Allow access only if flags are enabled
-    if (path === 'select-plan' && this.canAccessSelectPlan) {
-      return true;
-    }
-    if (path === 'my-health' && this.canAccessMyHealth) {
-      return true;
-    }
+    if (path === 'select-plan' && this.canAccessSelectPlan) return true;
+    if (path === 'my-health' && this.canAccessMyHealth) return true;
+    if (path === 'comfirmation' && this.canAccessConfirmation) return true;
 
-    // Otherwise, block and redirect to first step
+    // Block direct access and redirect
     this.router.navigate(['/get-quote']);
     return false;
   }
 
-  // ✅ Allow navigation from Get Quote → Select Plan
-  allowSelectPlanAccess() {
-    this.canAccessSelectPlan = true;
-  }
-
-  // ✅ Allow navigation from Select Plan → My Health
-  allowMyHealthAccess() {
-    this.canAccessMyHealth = true;
-  }
+  allowSelectPlanAccess() { this.canAccessSelectPlan = true; }
+  allowMyHealthAccess() { this.canAccessMyHealth = true; }
+  allowConfirmationAccess() { this.canAccessConfirmation = true; }
 
   resetAllAccess() {
     this.canAccessSelectPlan = false;
     this.canAccessMyHealth = false;
+    this.canAccessConfirmation = false;
   }
+
+  // Getters for template
+  get selectPlanAllowed() { return this.canAccessSelectPlan; }
+  get myHealthAllowed() { return this.canAccessMyHealth; }
+  get confirmationAllowed() { return this.canAccessConfirmation; }
 }
