@@ -29,14 +29,19 @@
 
 
 
-    <a 
-      [routerLink]="'/my-health'" 
+      <!-- Step 3: My Health -->
+    <a
+      [routerLink]="'/my-health'"
       class="nav-step"
-      routerLinkActive="active-step"
-      [routerLinkActiveOptions]="{ exact: true }">
+      [ngClass]="{
+        'active-step': currentRoute === '/my-health',
+        'pointer-events-none ': currentRoute === '/get-quote' || currentRoute === '/select-plan'
+      }"
+    >
       <span class="step-circle">3</span>
       <span>My Health</span>
     </a>
+
 
     <a 
       [routerLink]="'/comfirmation'" 

@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormAccessGuard } from '../../guards/form-access-guard';
 
 @Component({
   selector: 'app-select-plan',
-  imports: [],
   templateUrl: './select-plan.html',
-  styleUrl: './select-plan.css'
+  styleUrls: ['./select-plan.css']
 })
 export class SelectPlanComponent {
+  constructor(private router: Router, private formAccess: FormAccessGuard) {}
 
+  goToMyHealth() {
+    this.formAccess.allowMyHealthAccess();
+    this.router.navigate(['/my-health']);
+  }
 }

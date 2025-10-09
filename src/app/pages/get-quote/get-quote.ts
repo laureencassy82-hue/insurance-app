@@ -8,11 +8,10 @@ import { FormAccessGuard } from '../../guards/form-access-guard';
   styleUrls: ['./get-quote.css']
 })
 export class GetQuoteComponent {
-
   constructor(private router: Router, private formAccess: FormAccessGuard) {}
 
   goToSelectPlan() {
-    this.formAccess.allowAccess();  // ✅ allow navigation
+    this.formAccess.allowSelectPlanAccess();
     this.router.navigate(['/select-plan']);
   }
 }

@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: '', redirectTo: '/get-quote', pathMatch: 'full' },
   { path: 'get-quote', component: GetQuoteComponent },
   { path: 'select-plan', component: SelectPlanComponent, canActivate: [FormAccessGuard] },
-  { path: 'my-health', component: MyHealthComponent },
+  { path: 'my-health', component: MyHealthComponent, canActivate: [FormAccessGuard] },
   { path: 'comfirmation', component: ComfirmationComponent }
 ];
