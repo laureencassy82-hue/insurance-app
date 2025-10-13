@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormAccessGuard } from '../../core/guards/form-access-guard';
 
-// Import 3 standalone child components
+// Import the 3 standalone components
 import { HeaderImage } from '../../shared/components/header-image/header-image';
 import { GetQuoteFormComponent } from '../../shared/components/get-quote-form/get-quote-form';
 import { ProductHighlightsComponent } from '../../shared/components/product-highlights/product-highlights';

@@ -20,7 +20,7 @@ export class GetQuoteFormComponent {
       return;
     }
 
-    Array.from(files).forEach(file => {
+    Array.from(files).forEach((file) => {
       const validTypes = ['image/jpeg','image/png','image/bmp','image/tiff','image/svg+xml'];
       if (!validTypes.includes(file.type)) {
         alert('Invalid file type. Only JPG, PNG, BMP, TIFF, or SVG allowed.');

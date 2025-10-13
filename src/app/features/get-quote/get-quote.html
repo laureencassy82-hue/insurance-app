@@ -1,10 +1,14 @@
 <div class="bg-gray-page flex flex-col items-center">
-  <!-- Header Image Section -->
+  <!-- Header -->
   <app-header-image></app-header-image>
 
-  <!-- Form + Product Highlights Section -->
-  <div class="min-h-screen flex flex-col md:flex-row bg-purple-700 p-4 md:p-14 gap-9 w-full">
+  <!-- Main Content -->
+  <div class="min-h-screen flex flex-col md:flex-row bg-purple-700 p-4 md:px-20 md:py-14 gap-12 w-full justify-center items-start">
+
+    <!-- Left Form -->
     <app-get-quote-form (nextStep)="goToSelectPlan()"></app-get-quote-form>
+
+    <!-- Right Product Highlights -->
     <app-product-highlights></app-product-highlights>
   </div>
 </div>
