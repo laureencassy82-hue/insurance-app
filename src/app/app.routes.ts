@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { GetQuoteComponent } from './pages/get-quote/get-quote';
-import { SelectPlanComponent } from './pages/select-plan/select-plan';
-import { MyHealthComponent } from './pages/my-health/my-health';
-import { ConfirmationComponent } from './pages/comfirmation/comfirmation';
-import { FormAccessGuard } from './guards/form-access-guard';
+import { GetQuoteComponent } from './features/get-quote/get-quote';
+import { SelectPlanComponent } from './features/select-plan/select-plan';
+import { MyHealthComponent } from './features/my-health/my-health';
+import { ConfirmationComponent } from './features/comfirmation/comfirmation';
+import { FormAccessGuard } from './core/guards/form-access-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/get-quote', pathMatch: 'full' },

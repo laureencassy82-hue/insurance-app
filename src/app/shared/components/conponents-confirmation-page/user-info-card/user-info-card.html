@@ -1,0 +1,59 @@
+<div class="bg-white rounded-xl shadow-xl p-6 md:p-10 w-full max-w-5xl mx-auto">
+  <!-- Header -->
+  <div class="flex justify-between items-center mb-6">
+    <div class="flex items-center space-x-4">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User Avatar" class="w-16 h-16 rounded-full border" />
+      <div>
+        <h2 class="text-lg font-semibold text-gray-900">{{ confirmationForm.get('fullName')?.value }}</h2>
+        <p class="text-sm text-gray-600">{{ confirmationForm.get('email')?.value }}</p>
+      </div>
+    </div>
+
+    <!-- Edit Button -->
+    <button (click)="onEdit()" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg hover:bg-yellow-500 transition">
+      Edit
+    </button>
+  </div>
+
+  <!-- Display User Info -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <p class="text-sm font-medium">Full Name</p>
+      <p>{{ confirmationForm.get('fullName')?.value }}</p>
+    </div>
+    <div>
+      <p class="text-sm font-medium">Nick Name</p>
+      <p>{{ confirmationForm.get('nickName')?.value }}</p>
+    </div>
+    <div>
+      <p class="text-sm font-medium">Date of Birth</p>
+      <p>{{ confirmationForm.get('dateOfBirth')?.value }}</p>
+    </div>
+    <div>
+      <p class="text-sm font-medium">Contact Number</p>
+      <p>{{ confirmationForm.get('contactNumber')?.value }}</p>
+    </div>
+    <div class="md:col-span-2">
+      <p class="text-sm font-medium">Address</p>
+      <p>{{ confirmationForm.get('address')?.value }}</p>
+    </div>
+    <div class="md:col-span-2">
+      <p class="text-sm font-medium">Email</p>
+      <p>{{ confirmationForm.get('email')?.value }}</p>
+    </div>
+
+    <!-- National ID Display -->
+    <div class="md:col-span-2">
+      <p class="text-sm font-medium mb-2">National ID Card (Front and Back)</p>
+      <div *ngIf="uploadedFiles.length > 0" class="flex flex-wrap gap-4 mt-2">
+        <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 border rounded-lg overflow-hidden">
+          <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
+          <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
+            {{ i === 0 ? 'Front Side' : 'Back Side' }}
+          </p>
+        </div>
+      </div>
+      <p *ngIf="uploadedFiles.length === 0" class="text-xs text-gray-500">No National ID uploaded yet.</p>
+    </div>
+  </div>
+</div>

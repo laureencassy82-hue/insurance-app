@@ -1,0 +1,13 @@
+{
+  "HEADER_TITLE": "My Angular App",
+  "WELCOME": "Welcome to our website",
+  "BUY_POLICY": "Buy A Policy",
+  "MY_WALLET": "My Wallet",
+  "LOGIN": "Login",
+  "NAV": {
+    "STEP1": "Get a quote",
+    "STEP2": "Select Plan",
+    "STEP3": "My Health",
+    "STEP4": "Confirmation"
+  }
+}

@@ -1,0 +1,69 @@
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <div class="bg-white p-4 rounded-xl w-full max-w-lg shadow-lg max-h-[80vh] overflow-y-auto">
+    <h2 class="text-xl font-bold mb-4">Edit User Information</h2>
+
+    <div [formGroup]="confirmationForm" class="grid grid-cols-1 gap-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Full Name</label>
+        <input type="text" formControlName="fullName" class="w-full border rounded-md p-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Nick Name</label>
+        <input type="text" formControlName="nickName" class="w-full border rounded-md p-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Date of Birth</label>
+        <input type="text" formControlName="dateOfBirth" class="w-full border rounded-md p-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Contact Number</label>
+        <input type="text" formControlName="contactNumber" class="w-full border rounded-md p-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Address</label>
+        <textarea formControlName="address" rows="2" class="w-full border rounded-md p-2"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">Email</label>
+        <input type="email" formControlName="email" class="w-full border rounded-md p-2" />
+      </div>
+
+      <!-- National ID Upload -->
+      <div>
+        <label class="block text-sm font-medium mb-2">
+          National ID Card (Front and Back) <span class="text-red-500">*</span>
+        </label>
+        <p class="text-xs text-gray-500 mb-3">
+          Upload exactly 2 images (Front and Back). Accepted: JPG, PNG, BMP, TIFF, SVG
+        </p>
+
+        <div class="border rounded-lg p-4 flex flex-col items-center justify-center space-y-3">
+          <label class="bg-purple-600 text-white px-5 py-2 rounded-md hover:bg-purple-700 cursor-pointer transition">
+            Select Files
+            <input type="file" multiple accept=".jpg,.jpeg,.png,.bmp,.tiff,.svg" (change)="onFileChange($event)" class="hidden" />
+          </label>
+
+          <div *ngIf="uploadedFiles.length > 0" class="flex flex-wrap justify-center gap-4 mt-4">
+            <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 border rounded-lg overflow-hidden">
+              <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
+              <button type="button" (click)="onRemove(i)" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
+              <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
+                {{ i === 0 ? 'Front Side' : 'Back Side' }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-end gap-3 mt-4">
+      <button (click)="onCancel()" class="px-4 py-2 border rounded-lg hover:bg-gray-100">Cancel</button>
+      <button (click)="onSave()" class="px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500">Save</button>
+    </div>
+  </div>
+</div>

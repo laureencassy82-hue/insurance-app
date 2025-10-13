@@ -1,0 +1,35 @@
+<div class="w-full md:w-3/5 flex flex-col items-center">
+  <div class="w-full bg-white rounded-lg shadow-lg flex flex-col justify-center items-center overflow-hidden">
+    <div class="w-full bg-yellow-500 h-16 flex items-center justify-center">
+      <h2 class="font-bold text-xl md:text-2xl text-black text-center">Get A Quote</h2>
+    </div>
+    <div class="w-full md:p-10">
+      <form class="flex flex-col space-y-5">
+        <!-- Full Name, Gender, DOB, Contact, Email, Address fields here -->
+        <!-- National ID Upload -->
+        <div class="border rounded-lg p-6 flex flex-col items-center justify-center space-y-3">
+          <label class="bg-purple-600 text-white px-5 py-2 rounded-md hover:bg-purple-700 cursor-pointer transition">
+            Select Files
+            <input type="file" multiple accept=".jpg,.jpeg,.png,.bmp,.tiff,.svg" (change)="onFileSelected($event)" class="hidden" />
+          </label>
+          <div *ngIf="uploadedFiles.length > 0" class="flex flex-wrap justify-center gap-4 mt-4">
+            <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 border rounded-lg overflow-hidden hover:shadow-lg transition">
+              <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
+              <button type="button" (click)="removeImage(i)" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
+              <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
+                {{ i === 0 ? 'Front Side' : 'Back Side' }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="w-full mt-4 text-center border-t-2 border-[#FFD700] pt-4">
+    <button type="button" (click)="goToNext()"
+            class="w-full bg-yellow-500 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition-all duration-300">
+      Next
+    </button>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="bg-gray-page flex flex-col items-center">
+  <!-- Header Image Section -->
+  <app-header-image></app-header-image>
+
+  <!-- Form + Product Highlights Section -->
+  <div class="min-h-screen flex flex-col md:flex-row bg-purple-700 p-4 md:p-14 gap-9 w-full">
+    <app-get-quote-form (nextStep)="goToSelectPlan()"></app-get-quote-form>
+    <app-product-highlights></app-product-highlights>
+  </div>
+</div>
