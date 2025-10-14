@@ -6,8 +6,9 @@
 
   <!-- Desktop Menu -->
   <div class="hidden md:flex items-center space-x-4 relative">
-    <button class="btn-yellow">{{ 'BUY_POLICY' | translate }}</button>
-    <button class="btn-purple">{{ 'MY_WALLET' | translate }}</button>
+    <button class="btn-yellow" routerLink="/get-quote">{{ 'BUY_POLICY' | translate }}</button>
+  <button class="btn-purple" (click)="goToWallet()">{{ 'MY_WALLET' | translate }}</button>
+
     
     <!-- Language dropdown -->
     <div class="relative">
@@ -37,7 +38,7 @@
       </div>
     </div>
 
-    <button class="btn-white">{{ 'LOGIN' | translate }}</button>
+    <button class="btn-white" routerLink="/login">{{ 'LOGIN' | translate }}</button>
   </div>
 
   <!-- Mobile Hamburger -->

@@ -9,5 +9,137 @@
     "STEP2": "Select Plan",
     "STEP3": "My Health",
     "STEP4": "Confirmation"
+  },
+  "GET_QUOTE": {
+    "TITLE": "Get A Quote",
+    "FULL_NAME": "Full Name",
+    "GENDER": "Gender",
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "DATE_OF_BIRTH": "Date of Birth",
+    "CONTACT_NUMBER": "Contact Number",
+    "ADDRESS": "Address in Cambodia",
+    "NATIONAL_ID": "National ID Card (Front and Back)",
+    "NATIONAL_ID_NOTE": "Upload exactly 2 images (Front and Back). Accepted: JPG, PNG, BMP, TIFF, SVG",
+    "FRONT": "Front Side",
+    "BACK": "Back Side",
+    "NEXT": "Next"
+  },
+  "PRODUCT_HIGHLIGHTS": {
+    "TITLE": "Product Highlights",
+    "ITEM1": "Death and TPD coverage up to $10,000",
+    "ITEM2": "Affordable premiums as low as $0.10 a day",
+    "ITEM3": "5 Simple Steps",
+    "NOTE": "The product information in this website is for reference only and does not contain the full terms and conditions, key product risks and full list of exclusions of the policy. For details, please refer to the product brochure.",
+    "BROCHURE": "Product Brochure"
+  },
+   "SELECT_PLAN": {
+    "SILVER": {
+      "TITLE": "BrightLife Silver",
+      "PRICE": "USD 20.6",
+      "COVERAGE": "USD 2,500",
+      "BENEFITS": "Benefits in case of Death or Total Permanent Disability."
+    },
+    "GOLD": {
+      "TITLE": "BrightLife Gold",
+      "PRICE": "USD 41.2",
+      "COVERAGE": "USD 5,000",
+      "BENEFITS": "Benefits in case of Death or Total Permanent Disability."
+    },
+    "DIAMOND": {
+      "TITLE": "BrightLife Diamond",
+      "PRICE": "USD 82.4",
+      "COVERAGE": "USD 10,000",
+      "BENEFITS": "Benefits in case of Death or Total Permanent Disability."
+    },
+    "POLICY_TERM": "Policy Term: 1 year",
+    "PREMIUM_FREQUENCY": "Premium Frequency: Single",
+    "SELECT": "Select"
+  },
+  "MY_HEALTH": {
+    "TITLE": "My Health",
+    "QUESTION1": "1. Have you ever had, been told to have or suspected to have:",
+    "QUESTION1_DETAILS": [
+      "Diabetes mellitus",
+      "High blood pressure",
+      "Chest pain, heart attack, or coronary artery disease, or any kind of stroke",
+      "Cancer, or growth of any kind",
+      "Acute or chronic liver disease, or viral hepatitis",
+      "Acute or chronic kidney failure",
+      "Chronic obstructive pulmonary disease, or acute or chronic lung diseases",
+      "Lupus, or rheumatoid arthritis",
+      "HIV/AIDS or related complications",
+      "Physical defect or deformities, or ear or eye condition",
+      "Congenital or hereditary disease, or mental health problem",
+      "Alcoholism or drug abuse",
+      "Any disease or disorder of major organs",
+      "Any severe disease not mentioned above",
+      "In the past 6 months, unexplained bleeding or weight loss"
+    ],
+    "QUESTION2": "2. In the past 3 years",
+    "QUESTION2_DETAILS": [
+      "Been hospitalized for 3 or more consecutive days",
+      "Under regular medication for at least 2 weeks",
+      "Had any surgery or medical tests with abnormal results"
+    ],
+    "QUESTION3": "3. Other insurance requests",
+    "QUESTION3_DETAILS": [
+      "Requested any other life insurance, critical illness, medical insurance or disability insurance proposal/policy that was declined or modified"
+    ],
+    "BUTTON_NEXT": "Next",
+    "OPTIONS": {
+      "YES": "Yes",
+      "NO": "No"
+    }
+  },
+  "BRIGHTLIFE": {
+  "TITLE": "Brightlife",
+  "DESCRIPTION": "Live worry-free no matter what happens as you have a full year of financial protection. Brightlife is a digital life insurance plan which provides financial protection for your family upon the risk of Death or Total Permanent Disability (TPD). This plan provides financial protection up to USD 10,000."
+},
+  "CONFIRMATION": {
+    "BUTTON": {
+      "EDIT": "Edit",
+      "CANCEL": "Cancel",
+      "SAVE": "Save",
+      "PAY": "Pay",
+      "NOT_UPLOADED": "No National ID uploaded yet"
+    },
+    "MESSAGES": {
+      "EDIT_SUCCESS": "User information updated successfully!",
+      "EDIT_ERROR": "Please fill all required fields correctly.",
+      "PAY_SUCCESS": "Payment Successful!"
+    },
+    "USER_INFO": {
+      "FULL_NAME": "Full Name",
+      "NICKNAME": "Nick Name",
+      "DATE_OF_BIRTH": "Date of Birth",
+      "CONTACT_NUMBER": "Contact Number",
+      "ADDRESS": "Address",
+      "EMAIL": "Email",
+      "NATIONAL_ID": "National ID Card",
+      "FRONT": "Front Side",
+      "BACK": "Back Side"
+    },
+    "PAYMENT": {
+      "WITH": "Payment With",
+      "CREDIT_CARD": "Credit Card",
+      "CARD_NUMBER": "Card Number",
+      "NAME_ON_CARD": "Name on Card",
+      "EXPIRE_DATE": "Expire Date",
+      "CVV": "CVV",
+      "OTHER_OPTIONS": "Other Options"
+    },
+    "TOTAL_PAYMENT": {
+      "NAME": "Name",
+      "DATE": "Date",
+      "INVOICE": "Invoice",
+      "DISCOUNT": "Discount",
+      "TOTAL": "Total"
+    }
   }
+
+
+
 }
+
+
