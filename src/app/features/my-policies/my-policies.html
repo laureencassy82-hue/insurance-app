@@ -1,0 +1,225 @@
+<div class="bg-gray-50 font-sans relative z-10">
+  <!-- Header Section -->
+  <header
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 flex flex-col md:flex-row md:justify-between relative z-10 min-h-[120px] sm:min-h-[300px]"
+  >
+    <div class="md:w-1/2 mt-1 ml-0 sm:ml-10">
+      <!-- Header Text -->
+      <div class="hidden sm:block">
+        <h1 class="text-5xl font-bold text-black">{{ 'WALLET.HEADER.TITLE' | translate }}</h1>
+        <h2 class="text-5xl font-semibold text-gray-900 mt-1">
+          {{ 'WALLET.HEADER.SUBTITLE' | translate }}
+        </h2>
+        <p class="mt-1 mb-8 text-sm">
+          {{ 'WALLET.HEADER.DESCRIPTION' | translate }}
+        </p>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <nav
+        class="mt-2 sm:mt-20 flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-6 border-b border-gray-300"
+      >
+        <a
+          routerLink="/wallet"
+          routerLinkActive="text-purple-600 border-b-2 border-purple-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-gray-500 hover:text-purple-600 font-medium pb-0.5 sm:pb-1 border-b-2 border-transparent transition-all duration-300 inline-block px-2 sm:px-0"
+        >
+          {{ 'WALLET.NAV.CUSTOMER_DETAILS' | translate }}
+        </a>
+
+        <a
+          routerLink="/my-policies"
+          routerLinkActive="text-purple-600 border-b-2 border-purple-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-gray-500 hover:text-purple-600 font-medium pb-0.5 sm:pb-1 border-b-2 border-transparent transition-all duration-300 inline-block px-2 sm:px-0"
+        >
+          {{ 'WALLET.NAV.MY_POLICIES' | translate }}
+        </a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<!-- Image (hidden on mobile) -->
+<div
+  class="absolute right-0 top-[100px] md:top-[150px] lg:top-[155px] mr-12 w-70 z-20 hidden sm:block"
+>
+  <img src="assets/images/girl.png" alt="Professional" class="w-70" />
+</div>
+
+<!-- Main Content -->
+<div class="bg-gray-light min-h-screen bg-purple-700 p-4 sm:p-6">
+  <div class="max-w-6xl mx-auto mt-20 space-y-6">
+
+    <!-- Header -->
+    <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">{{ 'POLICIES.PRODUCT.TITLE' | translate:{product:'BrightLife / BrightLife Silver'} }}</h1>
+          <p class="text-sm text-gray-600 mt-1">{{ 'POLICIES.PRODUCT.POLICY_NUMBER' | translate:{number:'098754543'} }}</p>
+        </div>
+        <button class="btn-yellow px-6 py-2 text-sm font-semibold">{{ 'POLICIES.PRODUCT.DOWNLOAD' | translate }}</button>
+      </div>
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Left Column: Product & Payment Information -->
+      <div class="lg:col-span-2 space-y-6">
+        
+        <!-- Product Information Card -->
+        <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-6 bg-primary-purple rounded"></div>
+            <h2 class="text-lg font-bold text-gray-900">{{ 'POLICIES.PRODUCT_INFO.TITLE' | translate }}</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.CREATED_DATE' | translate }}</p>
+                <p class="text-lg font-semibold">25-09-2023</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.NAME' | translate }}</p>
+                <p class="text-lg font-semibold">BrightLife</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.TYPE' | translate }}</p>
+                <p class="text-lg font-semibold">Premium</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.FREQUENCY' | translate }}</p>
+                <p class="text-lg font-semibold">Single</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.AGE' | translate }}</p>
+                <p class="text-lg font-semibold">35</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.PREMIUM_AFTER_DISCOUNT' | translate }}</p>
+                <p class="text-lg font-semibold text-primary-purple">USD 1,200</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.LAST_PAYMENT' | translate }}</p>
+                <p class="text-lg font-semibold">25-09-2030</p>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PRODUCT_INFO.STATUS' | translate }}</p>
+                <p class="text-lg font-semibold text-green-600">{{ 'POLICIES.PRODUCT_INFO.ACTIVE' | translate }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Information Card -->
+        <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-6 bg-primary-yellow rounded"></div>
+            <h2 class="text-lg font-bold text-gray-900">{{ 'POLICIES.PAYMENT_INFO.TITLE' | translate }}</h2>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex justify-between">
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PAYMENT_INFO.EFFECTIVE_DATE' | translate }}</p>
+              <p class="text-lg font-semibold">25-09-2023</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PAYMENT_INFO.MATURITY_DATE' | translate }}</p>
+              <p class="text-lg font-semibold">25-09-2053</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PAYMENT_INFO.STATUS' | translate }}</p>
+              <p class="text-lg font-semibold text-green-600">{{ 'POLICIES.PAYMENT_INFO.PAID' | translate }}</p>
+            </div>
+            <div class="flex justify-between">
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.PAYMENT_INFO.TOTAL_PREMIUM' | translate }}</p>
+              <p class="text-lg font-semibold text-primary-purple">USD 1,200</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Contact & Employee Information -->
+      <div class="space-y-6">
+        
+        <!-- Contact Information Card -->
+        <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-6 bg-secondary-purple rounded"></div>
+            <h2 class="text-lg font-bold text-gray-900">{{ 'POLICIES.CONTACT_INFO.TITLE' | translate }}</h2>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.CONTACT_INFO.MOBILE' | translate }}</p>
+              <p class="text-lg font-semibold">+855 12 345 678</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.CONTACT_INFO.EMAIL' | translate }}</p>
+              <p class="text-lg font-semibold">john.doe@email.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Employee Information Card -->
+        <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-6 bg-primary-purple rounded"></div>
+            <h2 class="text-lg font-bold text-gray-900">{{ 'POLICIES.EMPLOYEE_INFO.TITLE' | translate }}</h2>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.EMPLOYEE_INFO.NATIONAL_ID' | translate }}</p>
+              <p class="text-lg font-semibold">123456789</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.EMPLOYEE_INFO.PAYROLL_ID' | translate }}</p>
+              <p class="text-lg font-semibold">EMP-12345</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.EMPLOYEE_INFO.GENDER' | translate }}</p>
+              <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+              <p class="text-sm font-semibold">{{ 'POLICIES.EMPLOYEE_INFO.MALE' | translate }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Beneficiary Details Card -->
+        <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-2 h-6 bg-primary-yellow rounded"></div>
+            <h2 class="text-lg font-bold text-gray-900">{{ 'POLICIES.BENEFICIARY.TITLE' | translate }}</h2>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.BENEFICIARY.FULL_NAME' | translate }}</p>
+              <p class="text-lg font-semibold">Jane Doe</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.BENEFICIARY.DOB' | translate }}</p>
+              <p class="text-lg font-semibold">15-03-1990</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.BENEFICIARY.MOBILE' | translate }}</p>
+              <p class="text-lg font-semibold">+855 98 765 432</p>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600">{{ 'POLICIES.BENEFICIARY.RELATIONSHIP' | translate }}</p>
+              <p class="text-lg font-semibold">{{ 'POLICIES.BENEFICIARY.SPOUSE' | translate }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,39 +1,39 @@
 <div class="min-h-screen flex flex-col justify-center items-center bg-purple-700 p-6 space-y-6">
-
-  <!--  User Info Card -->
+  <!-- User Info Card -->
   <app-user-info-card 
     class="w-full"
     [confirmationForm]="confirmationForm"
     [uploadedFiles]="uploadedFiles"
+    [profileImage]="profileImage"
     (editClicked)="openEditForm()">
   </app-user-info-card>
 
-  <!--  Edit User Modal -->
+  <!-- Edit User Modal -->
   <app-edit-user-modal 
     *ngIf="showEditForm"
     [confirmationForm]="confirmationForm"
     [uploadedFiles]="uploadedFiles"
+    [profileImage]="profileImage"
     (close)="cancelEdit()"
     (save)="saveEdit()"
     (fileSelected)="onFileSelected($event)"
-    (removeImage)="removeImage($event)">
+    (removeImage)="removeImage($event)"
+    (removeProfileImage)="removeProfileImage()">
   </app-edit-user-modal>
 
-  <!--  Payment & Total Section -->
+  <!-- Payment & Total Section -->
   <div class="flex flex-col md:flex-row gap-6 w-full max-w-5xl">
+    <!-- Total Payment Component -->
+    <app-total-payment-card class="w-full md:w-80 order-1 md:order-2"></app-total-payment-card>
 
     <!-- Payment Component -->
     <app-payment-method
-      class="flex-1"
+      class="flex-1 order-2 md:order-1"
       [paymentForm]="paymentForm"
       [isLoading]="isLoading"
       [cardType]="cardType"
       (submitPayment)="submitPayment()"
       (cardNumberChanged)="detectCardType()">
     </app-payment-method>
-
-    <!-- Total Payment Component -->
-    <app-total-payment-card class="w-full md:w-80"></app-total-payment-card>
-    
   </div>
 </div>

@@ -3,7 +3,7 @@
   "WELCOME": "Welcome to our website",
   "BUY_POLICY": "Buy A Policy",
   "MY_WALLET": "My Wallet",
-  "LOGIN": "Login",
+  "LOGIN_Page": "Login",
   "NAV": {
     "STEP1": "Get a quote",
     "STEP2": "Select Plan",
@@ -127,19 +127,157 @@
       "NAME_ON_CARD": "Name on Card",
       "EXPIRE_DATE": "Expire Date",
       "CVV": "CVV",
-      "OTHER_OPTIONS": "Other Options"
-    },
+      "OTHER_OPTIONS": "Other Options",
+      "PAYMENT_WITH": "Payment With",
+      "CREDIT_CARD_NOTE": "Pay securely using Visa, MasterCard, UnionPay, JCB, or American Express.",
+      "CARD_NUMBER_PLACEHOLDER": "Card Number",
+      "NAME_ON_CARD_PLACEHOLDER": "Name on card",
+      "PAY": "Pay",
+      "ABA_PAYMENT": "ABA Payment",
+      "PAY_NOW": "Pay Now",
+      "SUCCESS": "Payment Successful",
+      "SUCCESS_DETAIL": "Successfully Paid $12.25",
+      "DATE": "Date",
+      "QUANTITY": "Quantity",
+      "INVOICE": "Invoice",
+      "DISCOUNT": "Discount",
+      "SUBTOTAL": "Subtotal",
+      "TOTAL": "Total",
+      "DONE": "Done",
+      "CONTACT": "Contact",
+      "SUCCESS_MESSAGE": "Payment successful!",
+      "FILL_ALL_FIELDS": "Please fill in all card details correctly."
+      },
     "TOTAL_PAYMENT": {
       "NAME": "Name",
       "DATE": "Date",
       "INVOICE": "Invoice",
       "DISCOUNT": "Discount",
-      "TOTAL": "Total"
+      "TOTAL": "Total",
+      "TITLE": "Total Payment"
+    },
+    "PAYMENT_METHOD": {
+      "TITLE": "Payment With",
+      "CREDIT_CARD": "Credit Card",
+      "CARD_INFO": "Pay securely using Visa, MasterCard, UnionPay, JCB, or American Express.",
+      "CARD_NUMBER": "Card Number",
+      "CARD_NUMBER_PLACEHOLDER": "Enter your card number",
+      "CARD_NAME": "Name on Card",
+      "CARD_NAME_PLACEHOLDER": "Enter name",
+      "EXPIRE_DATE": "Expire Date",
+      "EXPIRE_DATE_PLACEHOLDER": "MM/YY",
+      "CVV": "CVV",
+      "CVV_PLACEHOLDER": "***",
+      "OTHER_OPTIONS": "Other Options",
+      "PAY_BUTTON": "Pay",
+      "ABA_TITLE": "ABA Payment",
+      "PAY_NOW": "Pay Now",
+      "CONTACT": "Contact",
+      "SUCCESS_MESSAGE": "Payment Successful",
+      "ERROR_MESSAGE": "Please fill in all card details correctly.",
+      "DONE": "Done"
     }
-  }
+  },
+   "WALLET": {
+    "HEADER": {
+      "TITLE": "My Wallet",
+      "SUBTITLE": "Review Your Policies",
+      "DESCRIPTION": "Your protection and peace of mind are our top priorities. Our policies are designed to provide clear coverage, transparent terms, and assistance when you need it most."
+    },
+    "NAV": {
+      "CUSTOMER_DETAILS": "Customer Details",
+      "MY_POLICIES": "My Policies"
+    },
+    "CUSTOMER": {
+      "TITLE": "Customer Details",
+      "NAME": "Name: {{name}}",
+      "GENDER": "Gender: {{gender}}",
+      "DOB": "Date of Birth: {{dob}}"
+    },
+    "CONTACT": {
+      "TITLE": "Contact Info",
+      "PHONE": "Phone: {{phone}}",
+      "EMAIL": "Email: {{email}}",
+      "LOCATION": "Location: {{location}}"
+    },
+    "NATIONAL_ID": {
+      "TITLE": "National ID",
+      "NUMBER": "National ID Number: {{id}}"
+    }
+  },
+  "POLICIES": {
+    "PRODUCT": {
+      "TITLE": "{{product}}",
+      "POLICY_NUMBER": "Policy Number: {{number}}",
+      "DOWNLOAD": "Download"
+    },
+    "PRODUCT_INFO": {
+      "TITLE": "Product Information",
+      "CREATED_DATE": "Created Date",
+      "NAME": "Product Name",
+      "TYPE": "Product Type",
+      "FREQUENCY": "Payment Frequency",
+      "AGE": "Age at Purchase",
+      "PREMIUM_AFTER_DISCOUNT": "Premium after Discount",
+      "LAST_PAYMENT": "Last Payment Date",
+      "STATUS": "Status",
+      "ACTIVE": "Active"
+    },
+    "PAYMENT_INFO": {
+      "TITLE": "Payment Information",
+      "EFFECTIVE_DATE": "Policy Effective Date",
+      "MATURITY_DATE": "Maturity Date",
+      "STATUS": "Payment Status",
+      "PAID": "Paid",
+      "TOTAL_PREMIUM": "Total Premium Paid"
+    },
+    "CONTACT_INFO": {
+      "TITLE": "Contact Information",
+      "MOBILE": "Mobile Contact",
+      "EMAIL": "Email"
+    },
+    "EMPLOYEE_INFO": {
+      "TITLE": "Employee Information",
+      "NATIONAL_ID": "National ID",
+      "PAYROLL_ID": "Payroll ID",
+      "GENDER": "Gender",
+      "MALE": "Male"
+    },
+    "BENEFICIARY": {
+      "TITLE": "Beneficiary Details",
+      "FULL_NAME": "Full Beneficiary Name",
+      "DOB": "Date of Birth",
+      "MOBILE": "Mobile",
+      "RELATIONSHIP": "Relationship",
+      "SPOUSE": "Spouse"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "Login",
+    "LOGIN_USING": "Login using?",
+    "MOBILE": "Mobile",
+    "EMAIL": "Email",
+    "MOBILE_LABEL": "Mobile",
+    "MOBILE_PLACEHOLDER": "Contact Number",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "BUTTON": "Login"
+  },
+  
+  "PAYMENT": {
+    "SUCCESS": "Payment completed successfully",
+    "FILL_ALL_FIELDS": "Please fill all fields"
+  },
 
 
-
+  "Active": "Active",
+  "Paid": "Paid",
+  "Male": "Male",
+  "Female": "Female",
+  "Spouse": "Spouse"
 }
+
+  
+
 
 

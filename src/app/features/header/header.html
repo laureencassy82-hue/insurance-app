@@ -1,0 +1,120 @@
+<header class="bg-white shadow-md border-b px-4 md:px-header-x py-2 flex justify-between items-center">
+  <!-- Logo -->
+  <div>
+    <img src="assets/images/Logo1.png" alt="Logo" class="h-12">
+  </div>
+
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex items-center space-x-4 relative">
+    <!-- Active buttons -->
+    <button
+      [ngClass]="activePage === 'getQuote' ? 'btn-yellow' : 'btn-purple'"
+      (click)="goToGetQuote()"
+    >
+      {{ 'BUY_POLICY' | translate }}
+    </button>
+
+    <button
+      [ngClass]="activePage === 'wallet' ? 'btn-yellow' : 'btn-purple'"
+      (click)="goToWallet()"
+    >
+      {{ 'MY_WALLET' | translate }}
+    </button>
+
+    <!-- Language dropdown -->
+    <div class="relative">
+      <span
+        class="material-icons-outlined text-2xl text-gray-custom hover:text-primary-purple cursor-pointer flex items-center gap-1"
+        (click)="toggleLangDropdown()"
+      >
+        language
+        <span class="font-sans text-lg font-bold">{{ selectedLang.toUpperCase() }}</span>
+      </span>
+
+      <div
+        *ngIf="langDropdownOpen"
+        class="absolute right-0 mt-2 w-32 bg-white border rounded shadow-md z-50"
+      >
+        <button
+          class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+          (click)="switchLang('en')"
+        >
+          English
+        </button>
+        <button
+          class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+          (click)="switchLang('km')"
+        >
+          Khmer
+        </button>
+      </div>
+    </div>
+
+    <!-- Login button -->
+    <button class="btn-white" (click)="goToLogin()">{{ 'LOGIN_Page' | translate }}</button>
+  </div>
+
+ <!-- Mobile Hamburger -->
+<div class="md:hidden flex items-center space-x-2 relative">
+  <button
+    (click)="toggleMobileMenu()"
+    class="text-gray-custom w-10 h-10 flex items-center justify-center"
+  >
+    <!-- Hamburger SVG Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Mobile menu -->
+  <div
+    *ngIf="mobileMenuOpen"
+    class="absolute right-0 top-full mt-2 w-48 bg-white border rounded shadow-md z-50 flex flex-col gap-2 p-2"
+  >
+    <button
+      [ngClass]="activePage === 'getQuote' ? 'btn-yellow' : 'btn-purple'"
+      class="w-full"
+      (click)="goToGetQuote()"
+    >
+      {{ 'BUY_POLICY' | translate }}
+    </button>
+
+    <button
+      [ngClass]="activePage === 'wallet' ? 'btn-yellow' : 'btn-purple'"
+      class="w-full"
+      (click)="goToWallet()"
+    >
+      {{ 'MY_WALLET' | translate }}
+    </button>
+
+    <button class="btn-white w-full" (click)="goToLogin()">
+      {{ 'LOGIN_Page' | translate }}
+    </button>
+
+    <!-- Mobile language -->
+    <div class="border-t mt-2 pt-2">
+      <span class="flex items-center gap-1 px-4 py-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 4v16m8-8H4" />
+        </svg>
+        <span class="text-sm font-medium">{{ selectedLang.toUpperCase() }}</span>
+      </span>
+      <button
+        class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+        (click)="switchLang('en')"
+      >
+        English
+      </button>
+      <button
+        class="block w-full text-left px-4 py-2 hover:bg-gray-100"
+        (click)="switchLang('km')"
+      >
+        Khmer
+      </button>
+    </div>
+  </div>
+</div>

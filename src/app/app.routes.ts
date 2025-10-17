@@ -4,8 +4,9 @@ import { SelectPlanComponent } from './features/select-plan/select-plan';
 import { MyHealthComponent } from './features/my-health/my-health';
 import { ConfirmationComponent } from './features/comfirmation/comfirmation';
 import { FormAccessGuard } from './core/guards/form-access-guard';
-import { Wallet } from './pages/wallet/wallet';
-import { Login } from './pages/login/login';
+import { Wallet } from './features/wallet/wallet';
+import { Login } from './features/login/login';
+import { MyPolicies } from './features/my-policies/my-policies';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/get-quote', pathMatch: 'full' },
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'my-health', component: MyHealthComponent, canActivate: [FormAccessGuard] },
   { path: 'comfirmation', component: ConfirmationComponent, canActivate: [FormAccessGuard] },
   { path: 'wallet', component: Wallet },
-  { path: 'login', component: Login } 
+  { path: 'login', component: Login },
+   { path: 'my-policies', component: MyPolicies },
 ];

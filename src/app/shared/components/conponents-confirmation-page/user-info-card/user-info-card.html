@@ -1,59 +1,85 @@
-<div class="bg-white rounded-xl shadow-xl p-6 md:p-10 w-full max-w-5xl mx-auto">
+<div class="bg-white rounded-lg shadow-sm p-6 w-full max-w-5xl mx-auto">
   <!-- Header -->
-  <div class="flex justify-between items-center mb-6">
+  <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
     <div class="flex items-center space-x-4">
-      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="User Avatar" class="w-16 h-16 rounded-full border" />
+      <div *ngIf="profileImage; else noProfileImage" class="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full border overflow-hidden">
+        <img [src]="profileImage" alt="Profile Image" class="w-full h-full object-cover" />
+      </div>
+      <ng-template #noProfileImage>
+        <i class="fas fa-user-circle text-gray-400 text-4xl sm:text-5xl"></i>
+      </ng-template>
       <div>
-        <h2 class="text-lg font-semibold text-gray-900">{{ confirmationForm.get('fullName')?.value }}</h2>
-        <p class="text-sm text-gray-600">{{ confirmationForm.get('email')?.value }}</p>
+        <h2 class="text-lg sm:text-xl font-semibold text-gray-800">{{ confirmationForm.get('fullName')?.value }}</h2>
+        <p class="text-sm text-gray-500">{{ confirmationForm.get('email')?.value }}</p>
       </div>
     </div>
-
-    <!-- Edit Button -->
-    <button (click)="onEdit()" class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-lg hover:bg-yellow-500 transition">
-      Edit
+    <button (click)="onEdit()" class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition">
+      <i class="fas fa-edit text-gray-500"></i>
+      <span>{{ 'CONFIRMATION.BUTTON.EDIT' | translate }}</span>
     </button>
   </div>
 
   <!-- Display User Info -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
     <div>
-      <p class="text-sm font-medium">Full Name</p>
-      <p>{{ confirmationForm.get('fullName')?.value }}</p>
-    </div>
-    <div>
-      <p class="text-sm font-medium">Nick Name</p>
-      <p>{{ confirmationForm.get('nickName')?.value }}</p>
-    </div>
-    <div>
-      <p class="text-sm font-medium">Date of Birth</p>
-      <p>{{ confirmationForm.get('dateOfBirth')?.value }}</p>
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-user text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.FULL_NAME' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('fullName')?.value }}</p>
     </div>
     <div>
-      <p class="text-sm font-medium">Contact Number</p>
-      <p>{{ confirmationForm.get('contactNumber')?.value }}</p>
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-id-badge text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.NICKNAME' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('nickName')?.value }}</p>
     </div>
-    <div class="md:col-span-2">
-      <p class="text-sm font-medium">Address</p>
-      <p>{{ confirmationForm.get('address')?.value }}</p>
+    <div>
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-calendar-alt text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.DATE_OF_BIRTH' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('dateOfBirth')?.value }}</p>
     </div>
-    <div class="md:col-span-2">
-      <p class="text-sm font-medium">Email</p>
-      <p>{{ confirmationForm.get('email')?.value }}</p>
+    <div>
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-phone text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.CONTACT_NUMBER' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('contactNumber')?.value }}</p>
     </div>
-
-    <!-- National ID Display -->
-    <div class="md:col-span-2">
-      <p class="text-sm font-medium mb-2">National ID Card (Front and Back)</p>
+    <div class="sm:col-span-2">
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-map-marker-alt text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.ADDRESS' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('address')?.value || ('CONFIRMATION.BUTTON.NOT_UPLOADED' | translate) }}</p>
+    </div>
+    <div class="sm:col-span-2">
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2">
+        <i class="fas fa-envelope text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.EMAIL' | translate }}</span>
+      </p>
+      <p class="text-base text-gray-800">{{ confirmationForm.get('email')?.value }}</p>
+    </div>
+    <div class="sm:col-span-2">
+      <p class="text-sm font-medium text-gray-600 flex items-center space-x-2 mb-2">
+        <i class="fas fa-id-card text-gray-400"></i>
+        <span>{{ 'CONFIRMATION.USER_INFO.NATIONAL_ID' | translate }}</span>
+      </p>
       <div *ngIf="uploadedFiles.length > 0" class="flex flex-wrap gap-4 mt-2">
-        <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 border rounded-lg overflow-hidden">
+        <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-28 h-28 border border-gray-200 rounded-md overflow-hidden">
           <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
-          <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
-            {{ i === 0 ? 'Front Side' : 'Back Side' }}
+          <p class="absolute bottom-0 left-0 w-full text-center text-xs bg-gray-100/80 text-gray-700 font-medium">
+            {{ i === 0 ? ('CONFIRMATION.USER_INFO.FRONT' | translate) : ('CONFIRMATION.USER_INFO.BACK' | translate) }}
           </p>
         </div>
       </div>
-      <p *ngIf="uploadedFiles.length === 0" class="text-xs text-gray-500">No National ID uploaded yet.</p>
+      <p *ngIf="uploadedFiles.length === 0" class="text-sm text-gray-400">{{ 'CONFIRMATION.BUTTON.NOT_UPLOADED' | translate }}</p>
     </div>
   </div>
 </div>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />

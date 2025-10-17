@@ -3,7 +3,7 @@
   "WELCOME": "សូមស្វាគមន៍មកកាន់គេហទំព័ររបស់យើង",
   "BUY_POLICY": "ទិញគោលនយោបាយ",
   "MY_WALLET": "កាបូបរបស់ខ្ញុំ",
-  "LOGIN": "ចូល",
+  "LOGIN_Page": "ចូល",
   "NAV": {
     "STEP1": "ទទួលការដាក់ពាក្យ",
     "STEP2": "ជ្រើសរើសផែនការ",
@@ -121,15 +121,155 @@
     "PAYMENT": {
       "WITH": "បង់ប្រាក់ជាមួយ",
       "CREDIT_CARD": "កាតឥណទាន",
-      "OTHER_OPTIONS": "ជម្រើសផ្សេងទៀត"
-    },
+       "PAYMENT_WITH": "បង់ប្រាក់ជាមួយ",
+      "CREDIT_CARD_NOTE": "បង់ប្រាក់ដោយសុវត្ថិភាពដោយ Visa, MasterCard, UnionPay, JCB, ឬ American Express.",
+      "CARD_NUMBER": "លេខកាត",
+      "CARD_NUMBER_PLACEHOLDER": "លេខកាត",
+      "NAME_ON_CARD": "ឈ្មោះលើកាត",
+      "NAME_ON_CARD_PLACEHOLDER": "ឈ្មោះលើកាត",
+      "EXPIRE_DATE": "ថ្ងៃផុតកំណត់",
+      "CVV": "លេខ CVV",
+      "PAY": "បង់ប្រាក់",
+      "ABA_PAYMENT": "បង់ប្រាក់ ABA",
+      "PAY_NOW": "បង់ឥឡូវនេះ",
+      "SUCCESS": "ការទូទាត់បានជោគជ័យ",
+      "SUCCESS_DETAIL": "បានបង់ប្រាក់ $12.25 ជោគជ័យ",
+      "DATE": "កាលបរិច្ឆេទ",
+      "QUANTITY": "ចំនួន",
+      "INVOICE": "វិក្កយបត្រ",
+      "DISCOUNT": "បញ្ចុះតម្លៃ",
+      "SUBTOTAL": "សរុបមុនបញ្ចុះតម្លៃ",
+      "TOTAL": "សរុប",
+      "DONE": "បានបញ្ចប់",
+      "CONTACT": "ទំនាក់ទំនង",
+      "OTHER_OPTIONS": "ជម្រើសផ្សេងទៀត",
+      "SUCCESS_MESSAGE": "ការទូទាត់បានជោគជ័យ!",
+      "FILL_ALL_FIELDS": "សូមបំពេញព័ត៌មានកាតទាំងអស់ឲ្យបានត្រឹមត្រូវ។"
+      },
     "TOTAL_PAYMENT": {
       "NAME": "ឈ្មោះ",
       "DATE": "ថ្ងៃ",
       "INVOICE": "វិក្កយបត្រ",
       "DISCOUNT": "បញ្ចុះតម្លៃ",
-      "TOTAL": "សរុប"
+      "TOTAL": "សរុប",
+      "TITLE": "ការបង់ប្រាក់សរុប"
+    },
+    "PAYMENT_METHOD": {
+      "TITLE": "ការបង់ប្រាក់ជាមួយ",
+      "CREDIT_CARD": "កាតឥណទាន",
+      "CARD_INFO": "បង់ប្រាក់យ៉ាងសុវត្ថិភាពប្រើ Visa, MasterCard, UnionPay, JCB, ឬ American Express។",
+      "CARD_NUMBER": "លេខកាត",
+      "CARD_NUMBER_PLACEHOLDER": "បញ្ចូលលេខកាតរបស់អ្នក",
+      "CARD_NAME": "ឈ្មោះលើកាត",
+      "CARD_NAME_PLACEHOLDER": "បញ្ចូលឈ្មោះ",
+      "EXPIRE_DATE": "ថ្ងៃផុតកំណត់",
+      "EXPIRE_DATE_PLACEHOLDER": "ខ/ឆ្នាំ",
+      "CVV": "CVV",
+      "CVV_PLACEHOLDER": "***",
+      "OTHER_OPTIONS": "ជម្រើសផ្សេងៗ",
+      "PAY_BUTTON": "បង់ប្រាក់",
+      "ABA_TITLE": "ការបង់ប្រាក់ ABA",
+      "PAY_NOW": "បង់ប្រាក់ឥឡូវនេះ",
+      "CONTACT": "ទំនាក់ទំនង",
+      "SUCCESS_MESSAGE": "បង់ប្រាក់បានជោគជ័យ",
+      "ERROR_MESSAGE": "សូមបញ្ចូលព័ត៌មានកាតគ្រប់ប្រភេទដោយត្រឹមត្រូវ។",
+      "DONE": "រួចរាល់"
     }
-  }
+  },
+  "WALLET": {
+    "HEADER": {
+      "TITLE": "កាបូបរបស់ខ្ញុំ",
+      "SUBTITLE": "ពិនិត្យគោលការណ៍របស់អ្នក",
+      "DESCRIPTION": "ការពារនិងភាពសុខសន្តិភាពរបស់អ្នកគឺជាអាទិភាពចម្បងរបស់យើង។ គោលការណ៍របស់យើងត្រូវបានរចនាឡើងដើម្បីផ្តល់ការការពារ​ប៉ាន់ស្មានច្បាស់លាស់ លក្ខខណ្ឌថ្លៃលើ និងជំនួយពេលដែលអ្នកត្រូវការ។"
+    },
+    "NAV": {
+      "CUSTOMER_DETAILS": "ព័ត៌មានអតិថិជន",
+      "MY_POLICIES": "គោលការណ៍របស់ខ្ញុំ"
+    },
+    "CUSTOMER": {
+      "TITLE": "ព័ត៌មានអតិថិជន",
+      "NAME": "ឈ្មោះ: {{name}}",
+      "GENDER": "ភេទ: {{gender}}",
+      "DOB": "ថ្ងៃកំណើត: {{dob}}"
+    },
+    "CONTACT": {
+      "TITLE": "ព័ត៌មានទំនាក់ទំនង",
+      "PHONE": "ទូរស័ព្ទ: {{phone}}",
+      "EMAIL": "អ៊ីមែល: {{email}}",
+      "LOCATION": "ទីតាំង: {{location}}"
+    },
+    "NATIONAL_ID": {
+      "TITLE": "អត្តសញ្ញាណបណ្ណ",
+      "NUMBER": "លេខអត្តសញ្ញាណបណ្ណ: {{id}}"
+    }
+  },
+ "POLICIES": {
+    "PRODUCT": {
+      "TITLE": "{{product}}",
+      "POLICY_NUMBER": "លេខគោលនយោបាយ: {{number}}",
+      "DOWNLOAD": "ទាញយក"
+    },
+    "PRODUCT_INFO": {
+      "TITLE": "ព័ត៌មានផលិតផល",
+      "CREATED_DATE": "កាលបរិច្ឆេទបង្កើត",
+      "NAME": "ឈ្មោះផលិតផល",
+      "TYPE": "ប្រភេទផលិតផល",
+      "FREQUENCY": "បង់ប្រាក់ជាប្រចាំ",
+      "AGE": "អាយុពេលទិញ",
+      "PREMIUM_AFTER_DISCOUNT": "ប្រាក់បង់បន្ថែមបន្ទាប់ពីបញ្ចុះតម្លៃ",
+      "LAST_PAYMENT": "កាលបរិច្ឆេទបង់ចុងក្រោយ",
+      "STATUS": "ស្ថានភាព",
+      "ACTIVE": "សកម្ម"
+    },
+    "PAYMENT_INFO": {
+      "TITLE": "ព័ត៌មានការទូទាត់",
+      "EFFECTIVE_DATE": "កាលបរិច្ឆេទមានប្រសិទ្ធិភាព",
+      "MATURITY_DATE": "កាលបរិច្ឆេទផុតកំណត់",
+      "STATUS": "ស្ថានភាពការទូទាត់",
+      "PAID": "បានបង់",
+      "TOTAL_PREMIUM": "ប្រាក់សរុបបានបង់"
+    },
+    "CONTACT_INFO": {
+      "TITLE": "ព័ត៌មានទំនាក់ទំនង",
+      "MOBILE": "លេខទូរស័ព្ទ",
+      "EMAIL": "អ៊ីមែល"
+    },
+    "EMPLOYEE_INFO": {
+      "TITLE": "ព័ត៌មាននិយោជិត",
+      "NATIONAL_ID": "អត្តសញ្ញាណប័ណ្ណជាតិ",
+      "PAYROLL_ID": "លេខបញ្ជីប្រាក់ខែ",
+      "GENDER": "ភេទ",
+      "MALE": "ប្រុស"
+    },
+    "BENEFICIARY": {
+      "TITLE": "ព័ត៌មានអ្នកទទួលអត្ថប្រយោជន៍",
+      "FULL_NAME": "ឈ្មោះអ្នកទទួលអត្ថប្រយោជន៍",
+      "DOB": "ថ្ងៃខែឆ្នាំកំណើត",
+      "MOBILE": "លេខទូរស័ព្ទ",
+      "RELATIONSHIP": "ទំនាក់ទំនង",
+      "SPOUSE": "ប្ដី/ប្រពន្ធ"
+    }
+  },
+  "LOGIN": {
+    "TITLE": "ចូលគណនី",
+    "LOGIN_USING": "ចូលដោយ?",
+    "MOBILE": "ទូរស័ព្ទ",
+    "EMAIL": "អ៊ីមែល",
+    "MOBILE_LABEL": "ទូរស័ព្ទ",
+    "MOBILE_PLACEHOLDER": "លេខទំនាក់ទំនង",
+    "EMAIL_LABEL": "អ៊ីមែល",
+    "EMAIL_PLACEHOLDER": "បញ្ចូលអ៊ីមែលរបស់អ្នក",
+    "BUTTON": "ចូល"
+  },
+  "PAYMENT": {
+    "SUCCESS": "ការទូទាត់បានជោគជ័យ",
+    "FILL_ALL_FIELDS": "សូមបំពេញព័ត៌មានកាតទាំងអស់ឲ្យបានត្រឹមត្រូវ។"
+  },
 
+
+  "Active": "សកម្ម",
+  "Paid": "បានបង់",
+  "Male": "ប្រុស",
+  "Female": "ស្រី",
+  "Spouse": "ដៃគូ"
 }

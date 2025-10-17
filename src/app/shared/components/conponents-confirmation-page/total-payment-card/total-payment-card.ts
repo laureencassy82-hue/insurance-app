@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-total-payment-card',
   templateUrl: './total-payment-card.html',
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, TranslateModule]
 })
 export class TotalPaymentCardComponent {
   @Input() name: string = 'Brightlife Diamond';

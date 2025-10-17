@@ -25,9 +25,17 @@ export class ConfirmationComponent {
   confirmationForm: FormGroup;
   paymentForm: FormGroup;
   uploadedFiles: string[] = [];
+  profileImage: string | null = null;
   showEditForm: boolean = false;
   isLoading: boolean = false;
   cardType: string = '';
+  paymentSuccessMessage: string = '';
+  currentDateTime: Date = new Date('2025-10-16T14:58:00+08:00'); // Set to 02:58 PM +08, October 16, 2025
+
+  // Mobile payment screen states
+  showAbaScreen = false;
+  abaPaymentSuccess = false;
+  paymentSuccess = false;
 
   constructor(private fb: FormBuilder) {
     this.confirmationForm = this.fb.group({
@@ -49,14 +57,19 @@ export class ConfirmationComponent {
     });
   }
 
-  openEditForm() { this.showEditForm = true; }
-  cancelEdit() { this.showEditForm = false; }
+  openEditForm() {
+    this.showEditForm = true;
+  }
+
+  cancelEdit() {
+    this.showEditForm = false;
+  }
 
   saveEdit() {
     if (this.confirmationForm.valid) {
       alert('User information updated successfully!');
       this.showEditForm = false;
-      console.log('Updated info:', this.confirmationForm.value);
+      console.log('Updated info:', this.confirmationForm.value, 'Profile Image:', this.profileImage);
     } else {
       alert('Please fill all required fields correctly.');
     }
@@ -72,7 +85,7 @@ export class ConfirmationComponent {
     }
 
     Array.from(files).forEach((file) => {
-      const validTypes = ['image/jpeg','image/png','image/bmp','image/tiff','image/svg+xml'];
+      const validTypes = ['image/jpeg', 'image/png', 'image/bmp', 'image/tiff', 'image/svg+xml'];
       if (!validTypes.includes(file.type)) {
         alert('Invalid file type. Only JPG, PNG, BMP, TIF, or SVG allowed.');
         return;
@@ -85,7 +98,17 @@ export class ConfirmationComponent {
     });
   }
 
-  removeImage(index: number) { this.uploadedFiles.splice(index, 1); }
+  removeImage(index: number) {
+    this.uploadedFiles.splice(index, 1);
+  }
+
+  onProfileImageSelected(image: string) {
+    this.profileImage = image;
+  }
+
+  removeProfileImage() {
+    this.profileImage = null;
+  }
 
   detectCardType() {
     const number = this.paymentForm.get('cardNumber')?.value || '';
@@ -99,7 +122,42 @@ export class ConfirmationComponent {
     this.isLoading = true;
     setTimeout(() => {
       this.isLoading = false;
-      alert('Payment Successful!');
+      this.paymentSuccessMessage = 'Payment successful!';
+      this.paymentSuccess = true;
     }, 2000);
+  }
+
+  // Mobile payment methods
+  selectPaymentMethod(method: string): void {
+    this.showAbaScreen = false;
+    this.abaPaymentSuccess = false;
+
+    if (method === 'aba') {
+      this.showAbaScreen = true;
+    }
+    // Add other methods (acleda, other) as needed
+  }
+
+  processAbaPayment(): void {
+    setTimeout(() => {
+      this.abaPaymentSuccess = true;
+      this.paymentSuccessMessage = 'Payment successful!';
+      this.paymentSuccess = true;
+    }, 2000);
+  }
+
+  closePaymentScreen(): void {
+    this.showAbaScreen = false;
+    this.abaPaymentSuccess = false;
+  }
+
+  onPaymentSuccess(): void {
+    this.paymentSuccess = false;
+    this.showAbaScreen = false;
+    this.abaPaymentSuccess = false;
+    this.paymentSuccessMessage = '';
+    alert('Payment processed successfully! Redirecting...');
+    // Add navigation logic here if needed
+    // this.router.navigate(['/success']);
   }
 }

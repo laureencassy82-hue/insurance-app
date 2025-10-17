@@ -1,0 +1,112 @@
+<div class="bg-gray-50 font-sans relative z-10">
+  <!-- Header Section -->
+  <header
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12 flex flex-col md:flex-row md:justify-between relative z-10 min-h-[120px] sm:min-h-[300px]"
+  >
+    <div class="md:w-1/2 mt-1 ml-0 sm:ml-10">
+      <!-- Header Text -->
+      <div class="hidden sm:block">
+        <h1 class="text-5xl font-bold text-black">{{ 'WALLET.HEADER.TITLE' | translate }}</h1>
+        <h2 class="text-5xl font-semibold text-gray-900 mt-1">
+          {{ 'WALLET.HEADER.SUBTITLE' | translate }}
+        </h2>
+        <p class="mt-1 mb-8 text-sm">
+          {{ 'WALLET.HEADER.DESCRIPTION' | translate }}
+        </p>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <nav
+        class="mt-2 sm:mt-20 flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-6 border-b border-gray-300"
+      >
+        <a
+          routerLink="/wallet"
+          routerLinkActive="text-purple-600 border-b-2 border-purple-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-gray-500 hover:text-purple-600 font-medium pb-0.5 sm:pb-1 border-b-2 border-transparent transition-all duration-300 inline-block px-2 sm:px-0"
+        >
+          {{ 'WALLET.NAV.CUSTOMER_DETAILS' | translate }}
+        </a>
+
+        <a
+          routerLink="/my-policies"
+          routerLinkActive="text-purple-600 border-b-2 border-purple-600"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="text-gray-500 hover:text-purple-600 font-medium pb-0.5 sm:pb-1 border-b-2 border-transparent transition-all duration-300 inline-block px-2 sm:px-0"
+        >
+          {{ 'WALLET.NAV.MY_POLICIES' | translate }}
+        </a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<!-- Image -->
+<div
+  class="absolute right-0 top-[100px] md:top-[140px] lg:top-[147px] mr-12 w-70 z-20 hidden sm:block"
+>
+  <img src="assets/images/girl.png" alt="Professional" class="w-70" />
+</div>
+
+<!-- Main Content -->
+<div class="bg-purple-700 font-sans relative z-10">
+  <main
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10"
+  >
+    <!-- Left Panel: Customer Info -->
+    <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-2 h-6 bg-primary-purple rounded"></div>
+        <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.CUSTOMER.TITLE' | translate }}</h3>
+      </div>
+      <div class="space-y-4 text-black">
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">person</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.NAME' | translate:{name:'Phanhapich Rin'} }}</span>
+        </p>
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">female</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.GENDER' | translate:{gender:'Female'} }}</span>
+        </p>
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">calendar_today</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.DOB' | translate:{dob:'04/04/2006'} }}</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Panel: Contact Info -->
+    <div class="bg-white rounded-xl shadow-card p-4 sm:p-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-2 h-6 bg-secondary-purple rounded"></div>
+        <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.CONTACT.TITLE' | translate }}</h3>
+      </div>
+      <div class="space-y-4 text-black">
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">phone</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.PHONE' | translate:{phone:'+8551234567'} }}</span>
+        </p>
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">email</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.EMAIL' | translate:{email:'phanhapichrin@gmail.com'} }}</span>
+        </p>
+        <p class="flex items-center">
+          <span class="material-icons-outlined mr-2">location_on</span>
+          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.LOCATION' | translate:{location:'Phnom Penh'} }}</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Full Width: National ID -->
+    <div class="bg-white rounded-xl shadow-card p-4 sm:p-6 md:col-span-2">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-2 h-6 bg-primary-yellow rounded"></div>
+        <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.NATIONAL_ID.TITLE' | translate }}</h3>
+      </div>
+      <p class="flex items-center">
+        <span class="material-icons-outlined mr-2">badge</span>
+        <span class="text-lg font-semibold">{{ 'WALLET.NATIONAL_ID.NUMBER' | translate:{id:'1234567890'} }}</span>
+      </p>
+    </div>
+  </main>
+</div>

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
-import { HeaderComponent } from './shared/components/header/header';
-import { FooterComponent } from './shared/components/footer/footer';
+import { HeaderComponent } from './features/header/header';
+import { FooterComponent } from './features/footer/footer';
 import { FormAccessGuard } from './core/guards/form-access-guard';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
 
@@ -12,7 +12,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterModule, HeaderComponent, FooterComponent, TranslateModule],
   templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  styleUrls: ['../styles.css']
 })
 export class AppComponent {
   currentRoute: string = '';
