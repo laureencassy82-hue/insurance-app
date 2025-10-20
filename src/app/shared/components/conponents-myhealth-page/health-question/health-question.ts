@@ -17,16 +17,16 @@ import { CommonModule } from '@angular/common';
 
       <!-- Yes/No Buttons (smaller style) -->
       <div class="flex space-x-2">
-        <button *ngFor="let option of options"
-                type="button"
-                [ngClass]="{
-                  'bg-yellow-500 text-black': answer === option,
-                  'text-gray-800 bg-white': answer !== option
-                }"
-                class="px-3 py-1.5 border border-gray-400 rounded-md text-sm font-medium transition-all duration-200"
-                (click)="setAnswer(option)">
-          {{ option | titlecase }}
-        </button>
+          <button *ngFor="let option of options"
+            type="button"
+            [ngClass]="{
+              'bg-yellow-500 text-black': answer === option,
+              'text-gray-800 bg-white': answer !== option
+            }"
+            class="px-2 py-1 border border-gray-400 rounded-md text-xs font-medium transition-all duration-200"
+            (click)="setAnswer(option)">
+            {{ option | titlecase }}
+          </button>
       </div>
 
     </div>

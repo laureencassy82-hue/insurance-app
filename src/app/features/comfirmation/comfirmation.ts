@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 // Shared Components
 import { UserInfoCardComponent } from '../../shared/components/conponents-confirmation-page/user-info-card/user-info-card';
@@ -18,6 +19,7 @@ import { TotalPaymentCardComponent } from '../../shared/components/conponents-co
     EditUserModalComponent,
     PaymentMethodComponent,
     TotalPaymentCardComponent,
+    TranslateModule
   ],
   templateUrl: './comfirmation.html',
 })

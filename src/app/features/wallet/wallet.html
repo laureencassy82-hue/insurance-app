@@ -43,7 +43,7 @@
 
 <!-- Image -->
 <div
-  class="absolute right-0 top-[100px] md:top-[140px] lg:top-[147px] mr-12 w-70 z-20 hidden sm:block"
+  class="absolute right-0 top-[80px] md:top-[120px] lg:top-[127px] mr-12 w-70 z-20 hidden sm:block"
 >
   <img src="assets/images/girl.png" alt="Professional" class="w-70" />
 </div>
@@ -59,19 +59,34 @@
         <div class="w-2 h-6 bg-primary-purple rounded"></div>
         <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.CUSTOMER.TITLE' | translate }}</h3>
       </div>
-      <div class="space-y-4 text-black">
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">person</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.NAME' | translate:{name:'Phanhapich Rin'} }}</span>
-        </p>
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">female</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.GENDER' | translate:{gender:'Female'} }}</span>
-        </p>
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">calendar_today</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CUSTOMER.DOB' | translate:{dob:'04/04/2006'} }}</span>
-        </p>
+
+      <div class="space-y-4">
+        <!-- Name -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CUSTOMER.NAME_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">person</span>
+            {{ 'WALLET.CUSTOMER.NAME_VALUE' | translate:{name:'Phanhapich Rin'} }}
+          </p>
+        </div>
+
+        <!-- Gender -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CUSTOMER.GENDER_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">female</span>
+            {{ 'WALLET.CUSTOMER.GENDER_VALUE' | translate:{gender:'Female'} }}
+          </p>
+        </div>
+
+        <!-- DOB -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CUSTOMER.DOB_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">calendar_today</span>
+            {{ 'WALLET.CUSTOMER.DOB_VALUE' | translate:{dob:'04/04/2006'} }}
+          </p>
+        </div>
       </div>
     </div>
 
@@ -81,19 +96,34 @@
         <div class="w-2 h-6 bg-secondary-purple rounded"></div>
         <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.CONTACT.TITLE' | translate }}</h3>
       </div>
-      <div class="space-y-4 text-black">
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">phone</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.PHONE' | translate:{phone:'+8551234567'} }}</span>
-        </p>
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">email</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.EMAIL' | translate:{email:'phanhapichrin@gmail.com'} }}</span>
-        </p>
-        <p class="flex items-center">
-          <span class="material-icons-outlined mr-2">location_on</span>
-          <span class="text-lg font-semibold">{{ 'WALLET.CONTACT.LOCATION' | translate:{location:'Phnom Penh'} }}</span>
-        </p>
+
+      <div class="space-y-4">
+        <!-- Phone -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CONTACT.PHONE_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">phone</span>
+            {{ 'WALLET.CONTACT.PHONE_VALUE' | translate:{phone:'+8551234567'} }}
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CONTACT.EMAIL_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">email</span>
+            {{ 'WALLET.CONTACT.EMAIL_VALUE' | translate:{email:'phanhapichrin@gmail.com'} }}
+          </p>
+        </div>
+
+        <!-- Location -->
+        <div>
+          <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.CONTACT.LOCATION_LABEL' | translate }}</p>
+          <p class="flex items-center text-lg font-semibold text-black">
+            <span class="material-icons-outlined mr-2">location_on</span>
+            {{ 'WALLET.CONTACT.LOCATION_VALUE' | translate:{location:'Phnom Penh'} }}
+          </p>
+        </div>
       </div>
     </div>
 
@@ -103,10 +133,14 @@
         <div class="w-2 h-6 bg-primary-yellow rounded"></div>
         <h3 class="text-lg font-bold text-gray-900">{{ 'WALLET.NATIONAL_ID.TITLE' | translate }}</h3>
       </div>
-      <p class="flex items-center">
-        <span class="material-icons-outlined mr-2">badge</span>
-        <span class="text-lg font-semibold">{{ 'WALLET.NATIONAL_ID.NUMBER' | translate:{id:'1234567890'} }}</span>
-      </p>
+
+      <div>
+        <p class="text-xs text-gray-500 mb-1">{{ 'WALLET.NATIONAL_ID.NUM_LABEL' | translate }}</p>
+        <p class="flex items-center text-lg font-semibold text-black">
+          <span class="material-icons-outlined mr-2">badge</span>
+          {{ 'WALLET.NATIONAL_ID.NUM_VALUE' | translate:{id:'1234567890'} }}
+        </p>
+      </div>
     </div>
   </main>
 </div>

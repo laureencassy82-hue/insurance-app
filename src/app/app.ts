@@ -19,7 +19,7 @@ export class AppComponent {
   langDropdownOpen = false;
 
   // List of routes where nav/footer should be hidden
-  hideNavFooterRoutes: string[] = ['/wallet', '/login'];
+  hideNavFooterRoutes: string[] = ['/wallet', '/login', '/my-policies'];
 
   constructor(
     private router: Router,

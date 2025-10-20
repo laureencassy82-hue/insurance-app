@@ -1,3 +1,7 @@
+ <!-- Mobile Page Title -->
+    <div class="md:hidden w-full bg-primary-yellow py-4 flex items-center justify-center">
+      <h1 class="font-bold text-xl text-black text-center">{{ 'MY_HEALTH.TITLE' | translate }}</h1>
+    </div>
 <section class="bg-gray-page flex flex-col items-center">
   <div class="min-h-screen flex flex-col md:flex-row bg-purple-700 p-4 md:p-14 gap-9 w-full">
 
@@ -160,7 +164,7 @@
       <div class="w-full mt-4 text-center border-t-2 border-[#FFD700] pt-4">
         <button
           type="button"
-          class="w-full bg-yellow-500 text-black font-semibold py-3 rounded-lg hover:bg-yellow-400 transition-all duration-300"
+          class="w-full bg-yellow-500 text-black font-semibold py-2 rounded-lg hover:bg-yellow-400 transition-all duration-300"
           (click)="goToConfirmation()">
           {{ 'MY_HEALTH.BUTTON_NEXT' | translate }}
         </button>
