@@ -16,14 +16,17 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 })
 export class AppComponent {
   currentRoute: string = '';
-  langDropdownOpen = false; // toggle for dropdown
+  langDropdownOpen = false;
+
+  // List of routes where nav/footer should be hidden
+  hideNavFooterRoutes: string[] = ['/wallet', '/login'];
 
   constructor(
     private router: Router,
     public formAccess: FormAccessGuard,
     private translate: TranslateService
   ) {
-    // Router events
+    // Track route changes
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
@@ -38,9 +41,14 @@ export class AppComponent {
     translate.use(browserLang?.match(/en|km/) ? browserLang : 'en');
   }
 
+  // Helper: true if nav/footer should show
+  get showNavFooter(): boolean {
+    return !this.hideNavFooterRoutes.includes(this.currentRoute);
+  }
+
   switchLang(lang: string) {
     this.translate.use(lang);
-    this.langDropdownOpen = false; // close dropdown after selecting
+    this.langDropdownOpen = false; // close dropdown
   }
 
   toggleLangDropdown() {

@@ -7,6 +7,10 @@
 
   <!-- Main Content -->
   <div class="min-h-screen flex flex-col md:flex-row bg-purple-700 p-4 md:p-14 w-full gap-9">
+    <!-- Mobile Page Title -->
+    <div class="md:hidden w-full bg-primary-yellow py-4 flex items-center justify-center">
+      <h1 class="font-bold text-xl text-black text-center">{{ 'GET_QUOTE.TITLE' | translate }}</h1>
+    </div>
 
     <!-- Right Section: Product Highlights -->
     <div class="w-full md:w-2/5 flex flex-col items-center order-1 md:order-2">
@@ -63,7 +67,7 @@
                 class="input-field"
               />
               <small class="text-red-500 text-xs mt-1" *ngIf="fullNameRef.invalid && fullNameRef.touched">
-                please enter your full name
+                {{ 'ERROR.NAME' | translate }}
               </small>
             </div>
 
@@ -92,7 +96,7 @@
                 </button>
               </div>
               <small class="text-red-500 text-xs mt-1" *ngIf="quoteForm.submitted && !formData.gender">
-                please select your gender
+                {{ 'ERROR.GENDER' | translate }}
               </small>
             </div>
 
@@ -112,7 +116,7 @@
                 class="input-field"
               />
               <small class="text-red-500 text-xs mt-1" *ngIf="dobRef.invalid && dobRef.touched">
-                please enter your date of birth
+                {{ 'ERROR.DATE' | translate }}
               </small>
             </div>
 
@@ -148,14 +152,12 @@
                   >
                     <li *ngFor="let country of countries" (click)="selectCountry(country)"
                       class="flex items-center justify-between px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm">
-                    <div class="flex items-center space-x-2">
-                      <img [src]="country.flag" alt="flag" class="w-5 h-4 rounded-sm object-cover"/>
-                      <span class="truncate">{{ country.name }}</span> <!-- truncate avoids overflow -->
-                    </div>
-                    <span class="text-gray-500 ml-2 flex-shrink-0">{{ country.code }}</span> <!-- keep code separate -->
-                  </li>
-
-
+                      <div class="flex items-center space-x-2">
+                        <img [src]="country.flag" alt="flag" class="w-5 h-4 rounded-sm object-cover"/>
+                        <span class="truncate">{{ country.name }}</span>
+                      </div>
+                      <span class="text-gray-500 ml-2 flex-shrink-0">{{ country.code }}</span>
+                    </li>
                   </ul>
                 </div>
 
@@ -191,7 +193,7 @@
                 class="textarea-field"
               ></textarea>
               <small class="text-red-500 text-xs mt-1" *ngIf="addressRef.invalid && addressRef.touched">
-                please enter your address
+                {{ 'ERROR.ADDRESS' | translate }}
               </small>
             </div>
 
@@ -209,20 +211,18 @@
                 </label>
 
                 <small class="text-red-500 text-xs mt-1" *ngIf="uploadedFiles.length < 2 && quoteForm.submitted">
-                  please upload both front and back of your ID
+                  {{ 'ERROR.ID' | translate }}
                 </small>
 
-                <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 border rounded-card overflow-hidden hover:shadow-lg transition">
-                  <img 
-                    [src]="img" 
-                    alt="Preview" 
-                    class="w-full h-full object-cover cursor-pointer" 
-                    (click)="viewImage(img)" 
-                  />
-                  <button type="button" (click)="removeImage(i)" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
-                  <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
-                    {{ i === 0 ? ('GET_QUOTE.FRONT' | translate) : ('GET_QUOTE.BACK' | translate) }}
-                  </p>
+                <!-- Highlighted Row for Image Previews -->
+                <div *ngIf="uploadedFiles.length > 0" class="flex flex-row items-center justify-center gap-4 mt-4 p-4 bg-gray-100 rounded-lg shadow-md highlight-row">
+                  <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 rounded-md overflow-hidden hover:shadow-lg transition cursor-pointer" (click)="viewImage(img)" title="Click to view image">
+                    <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
+                    <button type="button" (click)="removeImage(i); $event.stopPropagation()" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
+                    <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
+                      {{ i === 0 ? ('GET_QUOTE.FRONT' | translate) : ('GET_QUOTE.BACK' | translate) }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

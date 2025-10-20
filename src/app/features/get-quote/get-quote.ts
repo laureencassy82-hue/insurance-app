@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-get-quote',
   templateUrl: './get-quote.html',
+  styleUrls: ['../../../styles.css'],
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule],
 })
@@ -17,7 +18,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
   uploadedFiles: string[] = [];
   dropdownOpen = false;
 
-  // ✅ Country list with flags (10 countries)
+  // Country list with flags (10 countries)
   countries = [
     { name: 'Cambodia', code: '+855', flag: 'assets/flags/cambodia.png' },
     { name: 'Vietnam', code: '+84', flag: 'assets/flags/vietnam.png' },
@@ -48,13 +49,13 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // ✅ Update header image based on language
+    // Update header image based on language
     this.updateHeaderImage(this.translate.currentLang || 'en');
     this.translate.onLangChange.subscribe((event) => {
       this.updateHeaderImage(event.lang);
     });
 
-    // ✅ Detect click outside dropdown
+    // Detect click outside dropdown
     document.addEventListener('click', this.onOutsideClick);
   }
 
@@ -69,7 +70,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
         : 'assets/images/header_en.png';
   }
 
-  // ✅ Dropdown Controls
+  // Dropdown Controls
   toggleDropdown(): void {
     this.dropdownOpen = !this.dropdownOpen;
   }
@@ -87,7 +88,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     }
   };
 
-  // ✅ File Upload
+  // File Upload
   onFileSelected(event: any): void {
     const files: FileList = event.target.files;
     if (!files) return;
@@ -131,7 +132,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     this.uploadedFiles.splice(index, 1);
   }
 
-  // ✅ Image Viewer
+  // Image Viewer
   viewImage(imageUrl: string): void {
     Swal.fire({
       imageUrl: imageUrl,
@@ -139,12 +140,12 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
       showConfirmButton: false,
       showCloseButton: true,
       width: 'auto',
-      background: '#fff',
+      background: '#ffffffff',
       backdrop: 'rgba(0,0,0,0.8)',
     });
   }
 
-  // ✅ Navigation & Validation
+  // Navigation & Validation
   goToSelectPlan(): void {
     if (
       !this.formData.fullName.trim() ||
@@ -170,7 +171,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     this.router.navigate(['/select-plan']);
   }
 
-  // ✅ Toast Notifications
+  // Toast Notifications
   showToast(message: string, icon: 'success' | 'error' = 'error'): void {
     const isMobile = window.innerWidth < 768;
     Swal.fire({

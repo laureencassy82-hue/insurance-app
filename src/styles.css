@@ -104,6 +104,27 @@
 .swal2-popup {
   max-width: 90% !important;
 }
+.highlight-row {
+  background: linear-gradient(180deg, #f1f5f9, #e2e8f0); /* Subtle gradient for highlight */
+  border: 2px solid #d1c4e9; /* Light purple border to match theme */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.highlight-row:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.mobile-page-title {
+  font-size: 1.25rem; /* Slightly smaller than desktop h1 but prominent */
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(180deg, #ffd700, #ffcc00); /* Matches primary-yellow */
+  border-bottom: 2px solid #d1c4e9; /* Matches highlight-row border */
+}
 
 
 

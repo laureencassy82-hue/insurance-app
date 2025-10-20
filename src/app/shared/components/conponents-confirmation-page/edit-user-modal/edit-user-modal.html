@@ -1,20 +1,20 @@
 <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
   <div class="bg-white p-6 rounded-lg shadow-sm w-full max-w-5xl mx-auto max-h-[80vh] overflow-y-auto">
-    <h2 class="text-xl font-semibold text-gray-800 mb-6">Edit User Information</h2>
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">{{ 'CONFIRMATION.BUTTON.EDIT' | translate }}</h2>
 
     <div [formGroup]="confirmationForm" class="grid grid-cols-1 gap-6">
 
-      <!-- Profile Image (View-only) -->
+      <!-- Profile Image -->
       <div>
         <div class="flex items-center gap-2 mb-2">
           <i class="fas fa-user-circle text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Profile Image</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.FULL_NAME' | translate }}</label>
         </div>
         <div class="border border-gray-200 rounded-md p-4 flex flex-col items-center justify-center">
-          <div *ngIf="profileImage" class="relative w-28 h-28 border border-gray-200 rounded-md overflow-hidden">
+          <div *ngIf="profileImage" class="relative w-28 h-28 rounded-md overflow-hidden">
             <img [src]="profileImage" alt="Profile Image" class="w-full h-full object-cover" />
           </div>
-          <p *ngIf="!profileImage" class="text-sm text-gray-400">No profile image available.</p>
+          <p *ngIf="!profileImage" class="text-sm text-gray-400">{{ 'CONFIRMATION.BUTTON.NOT_UPLOADED' | translate }}</p>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-user text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Full Name</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.FULL_NAME' | translate }}</label>
         </div>
         <input type="text" formControlName="fullName" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300" />
       </div>
@@ -31,7 +31,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-id-badge text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Nick Name</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.NICKNAME' | translate }}</label>
         </div>
         <input type="text" formControlName="nickName" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300" />
       </div>
@@ -40,7 +40,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-calendar-alt text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Date of Birth</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.DATE_OF_BIRTH' | translate }}</label>
         </div>
         <input type="text" formControlName="dateOfBirth" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300" />
       </div>
@@ -49,7 +49,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-phone text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Contact Number</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.CONTACT_NUMBER' | translate }}</label>
         </div>
         <input type="text" formControlName="contactNumber" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300" />
       </div>
@@ -58,7 +58,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-map-marker-alt text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Address</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.ADDRESS' | translate }}</label>
         </div>
         <textarea formControlName="address" rows="2" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300"></textarea>
       </div>
@@ -67,7 +67,7 @@
       <div>
         <div class="flex items-center gap-2">
           <i class="fas fa-envelope text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">Email</label>
+          <label class="text-sm font-medium text-gray-600">{{ 'CONFIRMATION.USER_INFO.EMAIL' | translate }}</label>
         </div>
         <input type="email" formControlName="email" class="w-full border border-gray-200 rounded-md p-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-300" />
       </div>
@@ -76,37 +76,37 @@
       <div>
         <div class="flex items-center gap-2 mb-2">
           <i class="fas fa-id-card text-gray-400"></i>
-          <label class="text-sm font-medium text-gray-600">National ID Card (Front and Back) <span class="text-red-500">*</span></label>
+          <label class="text-sm font-medium text-gray-600">
+            {{ 'CONFIRMATION.USER_INFO.NATIONAL_ID' | translate }} <span class="text-red-500">*</span>
+          </label>
         </div>
-        <p class="text-sm text-gray-500 mb-3">Upload exactly 2 images (Front and Back). Accepted: JPG, PNG, BMP, TIFF, SVG</p>
+        <p class="text-sm text-gray-500 mb-3">{{ 'GET_QUOTE.NATIONAL_ID_NOTE' | translate }}</p>
 
         <div class="border border-gray-200 rounded-md p-4 flex flex-col items-center justify-center space-y-3">
           <label class="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition cursor-pointer">
             <i class="fas fa-upload text-gray-500"></i>
-            <span>Select Files</span>
+            <span>{{ 'GET_QUOTE.SELECT_FILES' | translate }}</span>
             <input type="file" multiple accept=".jpg,.jpeg,.png,.bmp,.tiff,.svg" (change)="onFileChange($event)" class="hidden" />
           </label>
 
-          <!-- Preview National ID Images -->
-          <div *ngIf="uploadedFiles.length > 0" class="flex flex-wrap justify-center gap-4 mt-2">
-            <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-28 h-28 border border-gray-200 rounded-md overflow-hidden">
+          <div *ngIf="uploadedFiles.length > 0" class="flex flex-row items-center justify-center gap-4 mt-4 p-4 bg-gray-100 rounded-lg shadow-md highlight-row">
+            <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-28 h-28 rounded-md overflow-hidden hover:shadow-lg transition cursor-pointer" (click)="viewImage(img)" title="Click to view image">
               <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
-              <button type="button" (click)="onRemove(i)" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
-              <p class="absolute bottom-0 left-0 w-full text-center text-xs bg-gray-100/80 text-gray-700 font-medium">
-                {{ i === 0 ? 'Front Side' : 'Back Side' }}
+              <button type="button" (click)="onRemove(i); $event.stopPropagation()" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
+              <p class="absolute bottom-0 left-0 w-full text-center text-xs bg-white/60 text-gray-700 font-medium">
+                {{ i === 0 ? ('CONFIRMATION.USER_INFO.FRONT' | translate) : ('CONFIRMATION.USER_INFO.BACK' | translate) }}
               </p>
             </div>
           </div>
 
-          <p *ngIf="uploadedFiles.length === 0" class="text-sm text-gray-400">No National ID uploaded yet.</p>
+          <p *ngIf="uploadedFiles.length === 0" class="text-sm text-gray-400">{{ 'CONFIRMATION.BUTTON.NOT_UPLOADED' | translate }}</p>
         </div>
       </div>
     </div>
 
-    <!-- Action Buttons -->
     <div class="flex justify-end gap-3 mt-6">
-      <button (click)="onCancel()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition">Cancel</button>
-      <button (click)="onSave()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition">Save</button>
+      <button (click)="onCancel()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition">{{ 'CONFIRMATION.BUTTON.CANCEL' | translate }}</button>
+      <button (click)="onSave()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition">{{ 'CONFIRMATION.BUTTON.SAVE' | translate }}</button>
     </div>
   </div>
 </div>

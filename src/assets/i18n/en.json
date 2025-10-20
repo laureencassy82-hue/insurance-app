@@ -23,7 +23,8 @@
     "NATIONAL_ID_NOTE": "Upload exactly 2 images (Front and Back). Accepted: JPG, PNG, BMP, TIFF, SVG",
     "FRONT": "Front Side",
     "BACK": "Back Side",
-    "NEXT": "Next"
+    "NEXT": "Next",
+    "SELECT_FILES":"select files"
   },
   "PRODUCT_HIGHLIGHTS": {
     "TITLE": "Product Highlights",
@@ -254,7 +255,7 @@
   },
   "LOGIN": {
     "TITLE": "Login",
-    "LOGIN_USING": "Login using?",
+    "LOGIN_USING": "Login method?",
     "MOBILE": "Mobile",
     "EMAIL": "Email",
     "MOBILE_LABEL": "Mobile",
@@ -268,6 +269,17 @@
     "SUCCESS": "Payment completed successfully",
     "FILL_ALL_FIELDS": "Please fill all fields"
   },
+  "ERROR":{
+    "REQUIRED_FIELDS":"fields need to completed",
+    "NAME":"please enter your full name",
+    "DATE": "please enter your date of birth",
+    "ADDRESS":"please enter your address",
+    "ID":"please upload both front and back of your ID",
+    "GENDER":"please select your gender",
+    "UPLOAD_ID":"can upload only 2 images"
+  },
+
+  
 
 
   "Active": "Active",

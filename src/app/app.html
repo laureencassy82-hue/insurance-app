@@ -3,7 +3,7 @@
   <app-header></app-header>
 
   <!-- Navigation Steps -->
-  <nav class="flex flex-row md:grid md:grid-cols-4 bg-gray-light">
+  <nav *ngIf="showNavFooter" class="flex flex-row md:grid md:grid-cols-4 bg-gray-light">
     <!-- Step 1: Get a quote -->
     <a 
       [routerLink]="'/get-quote'" 
@@ -60,5 +60,5 @@
   </main>
 
   <!-- Footer -->
-   <app-footer class="hidden md:block"></app-footer>
+  <app-footer *ngIf="showNavFooter" class="hidden md:block"></app-footer>
 </div>
