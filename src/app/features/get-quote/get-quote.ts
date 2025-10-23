@@ -1,11 +1,10 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormAccessGuard } from '../../core/guards/form-access-guard';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
-import flatpickr from 'flatpickr';
 
 @Component({
   selector: 'app-get-quote',
@@ -14,24 +13,22 @@ import flatpickr from 'flatpickr';
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule],
 })
-export class GetQuoteComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild('dobInput') dobInput!: ElementRef;
-
+export class GetQuoteComponent implements OnInit, OnDestroy {
   headerImage: string = 'assets/images/header_en.png';
   uploadedFiles: string[] = [];
   dropdownOpen = false;
 
   // Country list
   countries = [
-    { name: 'Cambodia', code: '+855', flag: 'assets/flags/cambodia.png' },
-    { name: 'Vietnam', code: '+84', flag: 'assets/flags/vietnam.png' },
-    { name: 'Singapore', code: '+65', flag: 'assets/flags/singapore.png' },
-    { name: 'Malaysia', code: '+60', flag: 'assets/flags/malaysia.png' },
-    { name: 'Philippines', code: '+63', flag: 'assets/flags/philippines.png' },
-    { name: 'Indonesia', code: '+62', flag: 'assets/flags/indonesia.png' },
-    { name: 'Laos', code: '+856', flag: 'assets/flags/laos.png' },
-    { name: 'Myanmar', code: '+95', flag: 'assets/flags/myanmar.png' },
-    { name: 'China', code: '+86', flag: 'assets/flags/china.png' },
+    { name: '', code: '+855', flag: 'assets/flags/cambodia.png' },
+    { name: '', code: '+84', flag: 'assets/flags/vietnam.png' },
+    { name: '', code: '+65', flag: 'assets/flags/singapore.png' },
+    { name: '', code: '+60', flag: 'assets/flags/malaysia.png' },
+    { name: '', code: '+63', flag: 'assets/flags/philippines.png' },
+    { name: '', code: '+62', flag: 'assets/flags/indonesia.png' },
+    { name: '', code: '+856', flag: 'assets/flags/laos.png' },
+    { name: '', code: '+95', flag: 'assets/flags/myanmar.png' },
+    { name: '', code: '+86', flag: 'assets/flags/china.png' },
   ];
 
   selectedCountry = this.countries[0]; // Default Cambodia
@@ -43,6 +40,7 @@ export class GetQuoteComponent implements OnInit, OnDestroy, AfterViewInit {
     countryCode: this.selectedCountry.code,
     phone: '',
     address: '',
+     email:''
   };
 
   constructor(
@@ -52,28 +50,22 @@ export class GetQuoteComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
+    // Update header image based on language
     this.updateHeaderImage(this.translate.currentLang || 'en');
 
     this.translate.onLangChange.subscribe((event) => {
       this.updateHeaderImage(event.lang);
     });
 
+    // Detect click outside dropdown
     document.addEventListener('click', this.onOutsideClick);
-  }
-
-  ngAfterViewInit(): void {
-    flatpickr(this.dobInput.nativeElement, {
-    dateFormat: 'Y-m-d',
-    maxDate: 'today',
-    defaultDate: this.formData.dob || undefined, // <- use undefined instead of null
-  });
-
   }
 
   ngOnDestroy(): void {
     document.removeEventListener('click', this.onOutsideClick);
   }
 
+  // Public getter for template to apply Khmer font
   get isKhmer(): boolean {
     return this.translate.currentLang === 'km';
   }

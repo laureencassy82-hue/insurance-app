@@ -11,6 +11,7 @@
     "STEP4": "Confirmation"
   },
   "GET_QUOTE": {
+    "EMAIL": "Email",
     "TITLE": "Get A Quote",
     "FULL_NAME": "Full Name",
     "GENDER": "Gender",
@@ -291,7 +292,8 @@
     "ID":"please upload both front and back of your ID",
     "GENDER":"please select your gender",
     "UPLOAD_ID":"can upload only 2 images",
-    "ANSWER":"please select answer"
+    "ANSWER":"please select answer",
+    "EMAIL":"please enter your email"
   },
  "SELECT_FILES": "Select files",
   "Active": "Active",

@@ -51,7 +51,6 @@
 
         <!-- Form Container -->
         <div class="w-full p-4 md:p-10">
-
           <form #quoteForm="ngForm" class="flex flex-col space-y-5" novalidate>
 
             <!-- Full Name -->
@@ -68,7 +67,7 @@
                 [(ngModel)]="formData.fullName"
                 #fullNameRef="ngModel"
                 (blur)="fullNameRef.control.markAsTouched()"
-                class="input-field"
+                class="border border-gray-300 rounded-lg px-3 py-2 text-gray-700 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-primary-purple"
               />
               <small class="text-red-500 text-xs mt-1" *ngIf="fullNameRef.invalid && fullNameRef.touched">
                 {{ 'ERROR.NAME' | translate }}
@@ -105,33 +104,22 @@
             </div>
 
             <!-- Date of Birth -->
-            <div class="flex flex-col w-full relative">
+            <div class="flex flex-col w-full">
               <label for="dob" class="text-sm font-medium text-secondary-purple mb-1">
                 {{ 'GET_QUOTE.DATE_OF_BIRTH' | translate }} <span class="text-red-500">*</span>
               </label>
-
-              <div class="relative w-full">
+              
+              <div class="flex w-full">
                 <input
-                  #dobInput
                   id="dob"
-                  type="text"
-                  placeholder="{{ 'GET_QUOTE.DATE_OF_BIRTH' | translate }}"
+                  type="date"
                   required
                   name="dob"
                   [(ngModel)]="formData.dob"
                   #dobRef="ngModel"
                   (blur)="dobRef.control.markAsTouched()"
-                  class="input-field w-full"
-                  readonly
+                  class="border border-gray-300 rounded-lg px-3 py-2 text-gray-700 text-sm w-full focus:outline-none focus:ring-2 focus:ring-primary-purple"
                 />
-
-                <!-- Calendar Icon -->
-                <span class="absolute inset-y-0 right-3 flex items-center text-gray-400 pointer-events-none">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M8 7V3m8 4V3m-9 8h10m-12 4h12m-12 4h12M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
-                </span>
               </div>
 
               <small class="text-red-500 text-xs mt-1" *ngIf="dobRef.invalid && dobRef.touched">
@@ -139,14 +127,16 @@
               </small>
             </div>
 
+
             <!-- Contact Number -->
             <div class="flex flex-col">
               <label for="phone" class="text-sm font-medium text-secondary-purple mb-1">
                 {{ 'GET_QUOTE.CONTACT_NUMBER' | translate }} <span class="text-red-500">*</span>
               </label>
 
+              <!-- Make flex row on all screens, with gap -->
               <div class="flex flex-row gap-2 relative country-dropdown w-full">
-                <!-- Country Dropdown -->
+                <!-- Custom Country Dropdown -->
                 <div class="relative w-28 z-50 flex-shrink-0">
                   <button
                     type="button"
@@ -154,7 +144,11 @@
                     class="flex items-center justify-between w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary-purple"
                   >
                     <div class="flex items-center space-x-2">
-                      <img [src]="selectedCountry.flag" alt="flag" class="w-5 h-4 rounded-sm object-cover"/>
+                      <img
+                        [src]="selectedCountry.flag"
+                        alt="flag"
+                        class="w-5 h-4 rounded-sm object-cover"
+                      />
                       <span>{{ selectedCountry.code }}</span>
                     </div>
                     <span class="material-icons-outlined text-gray-500 text-base" style="font-family: 'Material Icons Outlined';">
@@ -162,12 +156,13 @@
                     </span>
                   </button>
 
+                  <!-- Dropdown List -->
                   <ul
                     *ngIf="dropdownOpen"
                     class="absolute z-50 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-56 overflow-y-auto"
                   >
                     <li *ngFor="let country of countries" (click)="selectCountry(country)"
-                      class="flex items-center justify-between px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm">
+                      class="flex items-center justify-between px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm">
                       <div class="flex items-center space-x-2">
                         <img [src]="country.flag" alt="flag" class="w-5 h-4 rounded-sm object-cover"/>
                         <span class="truncate">{{ country.name }}</span>
@@ -191,6 +186,31 @@
                 />
               </div>
             </div>
+            
+            <!-- Email -->
+            <div class="flex flex-col">
+              <label for="email" class="text-sm font-medium text-secondary-purple mb-1">
+                {{ 'GET_QUOTE.EMAIL' | translate }} <span class="text-red-500">*</span>
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                placeholder="{{ 'LOGIN.EMAIL_PLACEHOLDER' | translate }}"
+                name="email"
+                required
+                [(ngModel)]="formData.email"
+                #emailRef="ngModel"
+                (blur)="emailRef.control.markAsTouched()"
+                class="border border-gray-300 rounded-lg px-3 py-2 text-gray-700 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-primary-purple"
+              />
+
+              <small class="text-red-500 text-xs mt-1" *ngIf="emailRef.invalid && emailRef.touched">
+                {{ 'ERROR.EMAIL' | translate }}
+              </small>
+            </div>
+
+
 
             <!-- Address -->
             <div class="flex flex-col">
@@ -206,7 +226,7 @@
                 [(ngModel)]="formData.address"
                 #addressRef="ngModel"
                 (blur)="addressRef.control.markAsTouched()"
-                class="textarea-field"
+                class="border border-gray-300 rounded-lg px-3 py-2 text-gray-700 text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-primary-purple"
               ></textarea>
               <small class="text-red-500 text-xs mt-1" *ngIf="addressRef.invalid && addressRef.touched">
                 {{ 'ERROR.ADDRESS' | translate }}
@@ -220,7 +240,7 @@
               </label>
               <p class="text-xs text-gray-500 mb-3">{{ 'GET_QUOTE.NATIONAL_ID_NOTE' | translate }}</p>
 
-              <div class="border rounded-card p-6 flex flex-col items-center justify-center space-y-3">
+              <div class="border border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center space-y-3">
                 <label class="btn-purple cursor-pointer flex items-center justify-center">
                   {{ 'SELECT_FILES' | translate }}
                   <input type="file" multiple accept=".jpg,.jpeg,.png,.bmp,.tiff,.svg" class="hidden" (change)="onFileSelected($event)" />
@@ -230,10 +250,10 @@
                   {{ 'ERROR.ID' | translate }}
                 </small>
 
-                <!-- Image Previews -->
+                <!-- Highlighted Row for Image Previews -->
                 <div *ngIf="uploadedFiles.length > 0" class="flex flex-row items-center justify-center gap-4 mt-4 p-4 bg-gray-100 rounded-lg shadow-md highlight-row">
                   <div *ngFor="let img of uploadedFiles; let i = index" class="relative w-32 h-32 rounded-md overflow-hidden hover:shadow-lg transition cursor-pointer" (click)="viewImage(img)" title="Click to view image">
-                    <img [src]="img" alt="Preview" class="w-full h-full object-cover"/>
+                    <img [src]="img" alt="Preview" class="w-full h-full object-cover" />
                     <button type="button" (click)="removeImage(i); $event.stopPropagation()" class="absolute top-1 right-1 bg-red-500 text-white text-xs px-2 py-1 rounded-full hover:bg-red-600">✕</button>
                     <p class="absolute bottom-1 left-0 w-full text-center text-xs bg-white/60 text-gray-800 font-medium">
                       {{ i === 0 ? ('GET_QUOTE.FRONT' | translate) : ('GET_QUOTE.BACK' | translate) }}
@@ -245,8 +265,6 @@
 
           </form>
         </div>
-
-
       </div>
 
       <!-- Next Button -->

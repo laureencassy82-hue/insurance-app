@@ -1,6 +1,6 @@
 <header
   [ngClass]="{'font-khmer': selectedLang === 'km'}"
-  class="safe-area-top bg-white shadow-md border-b px-4 md:px-header-x py-2 flex justify-between items-center"
+  class="safe-area-top bg-white shadow-md border-b px-4 md:px-header-x py-1 flex justify-between items-center"
 >
 
   <!-- Logo -->
@@ -11,28 +11,30 @@
   <!-- Desktop Menu -->
   <div class="hidden md:flex items-center space-x-4 relative">
     <button
-      [ngClass]="activePage === 'getQuote' ? 'btn-yellow' : 'btn-purple'"
+      [ngClass]="activePage === 'getQuote' ? 'btn-yellow' : 'btn-white'"
       (click)="goToGetQuote()"
     >
       {{ 'BUY_POLICY' | translate }}
     </button>
 
     <button
-      [ngClass]="activePage === 'wallet' ? 'btn-yellow' : 'btn-purple'"
+      [ngClass]="activePage === 'wallet' ? 'btn-yellow' : 'btn-white'"
       (click)="goToWallet()"
     >
       {{ 'MY_WALLET' | translate }}
     </button>
 
-    <!-- Language dropdown -->
+    <!-- Language dropdown (DESKTOP) -->
     <div class="relative">
-      <span
-        class="material-icons-outlined text-2xl text-gray-custom hover:text-primary-purple cursor-pointer flex items-center gap-1"
+      <button
+        class="flex items-center gap-1 btn-white border border-gray-300"
         (click)="toggleLangDropdown()"
       >
-        language
-        <span class="font-sans text-lg font-bold">{{ selectedLang.toUpperCase() }}</span>
-      </span>
+        <span class="material-icons-outlined text-base text-gray-custom">
+          language
+        </span>
+        <span class="font-sans text-sm font-bold">{{ selectedLang.toUpperCase() }}</span>
+      </button>
 
       <div
         *ngIf="langDropdownOpen"
@@ -53,8 +55,15 @@
       </div>
     </div>
 
+
     <!-- Login button -->
-    <button class="btn-white" (click)="goToLogin()">{{ 'LOGIN_Page' | translate }}</button>
+    <button
+      [ngClass]="activePage === 'login' ? 'btn-yellow' : 'btn-white'"
+      (click)="goToLogin()"
+    >
+      {{ 'LOGIN_Page' | translate }}
+    </button>
+
   </div>
 
   <!-- Mobile Hamburger -->
@@ -97,7 +106,7 @@
       <!-- Mobile language -->
       <div class="border-t mt-2 pt-2">
         <button
-          class="flex items-center gap-1 px-4 py-2 w-full text-left hover:bg-gray-100"
+          class="flex items-center gap-1 px-4 py-2 w-full text-left hover:bg-gray-100 border border-gray-300 rounded-md"
           (click)="toggleLangDropdown()"
         >
           <span class="material-icons-outlined text-base text-gray-custom">
