@@ -123,38 +123,40 @@
         <div class="w-full p-10 md:p-10">
           <form class="flex flex-col space-y-6 text-gray-800 w-full">
 
-                      <!-- Question 1 -->
-            <div #question1Ref>
+            <div #question1Ref [ngClass]="{'bg-gray-200 rounded-md p-2': question1Error}">
               <app-health-question
                 [questionText]="'MY_HEALTH.QUESTION1' | translate"
                 [details]="'MY_HEALTH.QUESTION1_DETAILS' | translate"
                 [options]="['MY_HEALTH.OPTIONS.YES' | translate, 'MY_HEALTH.OPTIONS.NO' | translate]"
                 [(answer)]="question1">
               </app-health-question>
-              <small class="text-red-500 text-xs mt-1" *ngIf="question1Error">please select an answer</small>
             </div>
+            <small class="text-red-500 text-xs mt-1" *ngIf="question1Error"> {{ 'ERROR.ANSWER' | translate }}</small>
+
 
             <!-- Question 2 -->
-            <div #question2Ref>
+            <div #question2Ref [ngClass]="{'bg-gray-200 rounded-md p-2': question2Error}">
               <app-health-question
                 [questionText]="'MY_HEALTH.QUESTION2' | translate"
                 [details]="'MY_HEALTH.QUESTION2_DETAILS' | translate"
                 [options]="['MY_HEALTH.OPTIONS.YES' | translate, 'MY_HEALTH.OPTIONS.NO' | translate]"
                 [(answer)]="question2">
               </app-health-question>
-              <small class="text-red-500 text-xs mt-1" *ngIf="question2Error">please select an answer</small>
             </div>
+            <small class="text-red-500 text-xs mt-1" *ngIf="question2Error"> {{ 'ERROR.ANSWER' | translate }}</small>
+
 
             <!-- Question 3 -->
-            <div #question3Ref>
+            <div #question3Ref [ngClass]="{'bg-gray-200 rounded-md p-2': question3Error}">
               <app-health-question
                 [questionText]="'MY_HEALTH.QUESTION3' | translate"
                 [details]="'MY_HEALTH.QUESTION3_DETAILS' | translate"
                 [options]="['MY_HEALTH.OPTIONS.YES' | translate, 'MY_HEALTH.OPTIONS.NO' | translate]"
                 [(answer)]="question3">
               </app-health-question>
-              <small class="text-red-500 text-xs mt-1" *ngIf="question3Error">please select an answer</small>
             </div>
+            <small class="text-red-500 text-xs mt-1" *ngIf="question3Error"> {{ 'ERROR.ANSWER' | translate }}</small>
+
 
           </form>
         </div>

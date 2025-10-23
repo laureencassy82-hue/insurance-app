@@ -10,7 +10,7 @@ import { SelectedPlanService } from '../../core/services/selected-plan.service';
   selector: 'app-my-health',
   standalone: true,
   imports: [CommonModule, HealthQuestionComponent, TranslateModule],
-  templateUrl: './my-health.html',
+  templateUrl: './health.html',
 })
 export class MyHealthComponent {
   question1: string = '';

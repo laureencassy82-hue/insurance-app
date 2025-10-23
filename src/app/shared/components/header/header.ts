@@ -8,7 +8,7 @@ import { Router, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, TranslateModule, RouterModule],
   templateUrl: './header.html',
-  styleUrls: ['../../../styles.css']
+  styleUrls: ['../../../../styles.css']
 })
 export class HeaderComponent {
   langDropdownOpen = false;
@@ -24,6 +24,11 @@ export class HeaderComponent {
     const initialLang = browserLang?.match(/en|km/) ? browserLang : 'en';
     translate.use(initialLang);
     this.selectedLang = initialLang as 'en' | 'km';
+
+    // Apply initial Khmer font if needed
+    if (this.selectedLang === 'km') {
+      document.body.classList.add('khmer');
+    }
   }
 
   toggleLangDropdown() {
@@ -34,12 +39,20 @@ export class HeaderComponent {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
-  switchLang(lang: 'en' | 'km') {
-    this.translate.use(lang);
-    this.selectedLang = lang;
-    this.langDropdownOpen = false;
-    this.mobileMenuOpen = false;
+switchLang(lang: 'en' | 'km') {
+  this.translate.use(lang);
+  this.selectedLang = lang;
+  this.langDropdownOpen = false;
+  this.mobileMenuOpen = false;
+
+  // Apply Khmer font globally
+  if (lang === 'km') {
+    document.body.classList.add('khmer');
+  } else {
+    document.body.classList.remove('khmer');
   }
+}
+
 
   goToGetQuote() {
     this.activePage = 'getQuote';

@@ -1,8 +1,57 @@
+/* ===================== FONTS ===================== */
+
+/* Noto Sans Khmer */
+@font-face {
+  font-family: 'Noto Sans Khmer';
+  src: url('/assets/fonts/NotoSansKhmer-VariableFont.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Material Icons Outlined */
+@font-face {
+  font-family: 'Material Icons Outlined';
+  src: url('/assets/fonts/material-icons-outlined.woff2') format('woff2'),
+       url('/assets/fonts/material-icons-outlined.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===================== GLOBAL STYLES ===================== */
+
+body.khmer {
+  font-family: 'Noto Sans Khmer', sans-serif !important;
+}
+
+body.khmer input,
+body.khmer textarea,
+body.khmer select,
+body.khmer button,
+body.khmer label,
+body.khmer span,
+body.khmer p,
+body.khmer h1,
+body.khmer h2,
+body.khmer h3,
+body.khmer h4,
+body.khmer h5,
+body.khmer h6 {
+  font-family: 'Noto Sans Khmer', sans-serif !important;
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined' !important;
+}
+
+/* ===================== TAILWIND BASE ===================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Material icons */
+/* ===================== BUTTONS / NAVIGATION / FORMS ===================== */
+
 .material-icons {
   font-family: 'Material Icons';
   font-style: normal;
@@ -11,7 +60,8 @@
   display: inline-block;
 }
 
-/*--------------------------------------------------------------- Buttons header.html----------------------------------------------------- */
+/* ===================== BUTTONS ===================== */
+
 @layer utilities {
   .btn-yellow {
     @apply bg-primary-yellow text-black px-button-x py-button-y rounded-button font-semibold;
@@ -33,19 +83,20 @@
   .btn-white:hover {
     @apply bg-gray-100;
   }
+}
 
-  /*---------------------------------------------------   Navigation step links app.html---------------------------------------------- */
+/* ===================== NAVIGATION STEP ===================== */
+
+@layer utilities {
   .nav-step {
     @apply flex items-center justify-center gap-2 bg-white shadow-md p-3 rounded transition-all duration-200
            hover:shadow-lg hover:scale-105 text-primary-purple font-medium text-sm text-center;
   }
 
-  /* Active step */
   .active-step {
     @apply bg-primary-yellow;
   }
 
-  /* Step number circle */
   .step-circle {
     @apply flex items-center justify-center w-6 h-6 rounded-full bg-primary-purple text-white text-xs font-bold;
   }
@@ -57,32 +108,37 @@
 
   /* Header padding for desktop */
   .md\:px-header-x { padding-left: 5rem; padding-right: 5rem; }
-
-  .input-field {
-    @apply bg-gray-100 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
-  }
-
-  .select-field {
-    @apply bg-white border border-gray-300 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
-  }
-
-  .textarea-field {
-    @apply bg-gray-100 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
-  }
-
-  /* Radio button labels (like small buttons) */
-  .radio-label {
-    @apply px-button-x py-button-y rounded-button text-sm font-medium cursor-pointer bg-gray-100 text-gray-700 transition-all duration-300;
-  }
-
-  .radio-label-checked {
-    @apply bg-primary-yellow text-black;
-  }
-
-  .radio-label:hover {
-    @apply bg-yellow-400;
-  }
 }
+
+/* ===================== FORM INPUTS ===================== */
+
+.input-field {
+  @apply bg-gray-100 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
+}
+
+.select-field {
+  @apply bg-white border border-gray-300 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
+}
+
+.textarea-field {
+  @apply bg-gray-100 rounded-button px-button-x py-button-y focus:outline-none focus:ring-2 focus:ring-primary-purple;
+}
+
+/* Radio buttons */
+.radio-label {
+  @apply px-button-x py-button-y rounded-button text-sm font-medium cursor-pointer bg-gray-100 text-gray-700 transition-all duration-300;
+}
+
+.radio-label-checked {
+  @apply bg-primary-yellow text-black;
+}
+
+.radio-label:hover {
+  @apply bg-yellow-400;
+}
+
+/* ===================== ANIMATIONS ===================== */
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -90,43 +146,77 @@
 
 .animate-fade {
   animation: fadeIn 0.3s ease-in-out;
-
 }
-/* styles.css */
+
+/* ===================== SWEETALERT ===================== */
+
 .swal2-toast-custom {
   padding: 0.25rem 0.75rem; 
   font-size: 0.75rem;       
   line-height: 1rem;        
   min-height: 2rem;         
   border-radius: 0.375rem;  
-  transition: all 0.5s ease; /* smooth fade in/out */
+  transition: all 0.5s ease;
 }
+
 .swal2-popup {
   max-width: 90% !important;
 }
+
+/* ===================== HIGHLIGHT ROW ===================== */
+
 .highlight-row {
-  background: linear-gradient(180deg, #f1f5f9, #e2e8f0); /* Subtle gradient for highlight */
-  border: 2px solid #d1c4e9; /* Light purple border to match theme */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+  border: 2px solid #d1c4e9;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .highlight-row:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* ===================== MOBILE PAGE TITLE ===================== */
+
 .mobile-page-title {
-  font-size: 1.25rem; /* Slightly smaller than desktop h1 but prominent */
+  font-size: 1.25rem;
   font-weight: 700;
   color: #000;
   text-align: center;
   padding: 1rem;
-  background: linear-gradient(180deg, #ffd700, #ffcc00); /* Matches primary-yellow */
-  border-bottom: 2px solid #d1c4e9; /* Matches highlight-row border */
+  background: linear-gradient(180deg, #ffd700, #ffcc00);
+  border-bottom: 2px solid #d1c4e9;
+}
+/* ===================== SAFE AREA (iPhone Notch) ===================== */
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+  background-color: #ffffff;
+}
+/* ===================== DATE OF BIRTH INPUT ===================== */
+
+/* Hide native browser calendar icon for consistency */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
 }
 
+/* Container for custom date input with icon */
+.date-input-wrapper {
+  @apply relative w-full;
+}
 
+.date-input-field {
+  @apply border border-gray-300 rounded-button px-button-x py-button-y text-gray-700 text-sm w-full focus:outline-none focus:ring-2 focus:ring-primary-purple;
+  padding-right: 2.5rem; /* space for optional icon */
+}
 
-
-
+.date-input-icon {
+  @apply absolute inset-y-0 right-3 flex items-center text-gray-400;
+  pointer-events: none; /* decorative only */
+}

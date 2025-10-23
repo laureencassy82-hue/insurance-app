@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet, RouterModule, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs/operators';
-import { HeaderComponent } from './features/header/header';
+import { HeaderComponent } from './shared/components/header/header';
 import { FooterComponent } from './features/footer/footer';
 import { FormAccessGuard } from './core/guards/form-access-guard';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -17,6 +17,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 export class AppComponent {
   currentRoute: string = '';
   langDropdownOpen = false;
+  selectedLang: 'en' | 'km' = 'en';
 
   // List of routes where nav/footer should be hidden
   hideNavFooterRoutes: string[] = ['/wallet', '/login', '/my-policies'];
@@ -38,7 +39,14 @@ export class AppComponent {
     translate.addLangs(['en', 'km']);
     translate.setDefaultLang('en');
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang?.match(/en|km/) ? browserLang : 'en');
+    const initialLang = browserLang?.match(/en|km/) ? browserLang : 'en';
+    translate.use(initialLang);
+    this.selectedLang = initialLang as 'en' | 'km';
+
+    // Apply Khmer font globally if initial language is Khmer
+    if (this.selectedLang === 'km') {
+      document.body.classList.add('khmer');
+    }
   }
 
   // Helper: true if nav/footer should show
@@ -46,9 +54,20 @@ export class AppComponent {
     return !this.hideNavFooterRoutes.includes(this.currentRoute);
   }
 
-  switchLang(lang: string) {
+  // Switch language dynamically
+  switchLang(lang: 'en' | 'km') {
     this.translate.use(lang);
-    this.langDropdownOpen = false; // close dropdown
+    this.selectedLang = lang;
+
+    // Close dropdown
+    this.langDropdownOpen = false;
+
+    // Toggle Khmer font globally
+    if (lang === 'km') {
+      document.body.classList.add('khmer');
+    } else {
+      document.body.classList.remove('khmer');
+    }
   }
 
   toggleLangDropdown() {

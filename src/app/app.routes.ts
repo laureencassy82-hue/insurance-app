@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { GetQuoteComponent } from './features/get-quote/get-quote';
 import { SelectPlanComponent } from './features/select-plan/select-plan';
-import { MyHealthComponent } from './features/my-health/my-health';
+import { MyHealthComponent } from './features/health/health';
 import { ConfirmationComponent } from './features/comfirmation/comfirmation';
 import { FormAccessGuard } from './core/guards/form-access-guard';
 import { Wallet } from './features/wallet/wallet';
 import { Login } from './features/login/login';
-import { MyPolicies } from './features/my-policies/my-policies';
+import { MyPolicies } from './features/policies/policies';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/get-quote', pathMatch: 'full' },

@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormAccessGuard } from '../../core/guards/form-access-guard';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import Swal from 'sweetalert2';
+import flatpickr from 'flatpickr';
 
 @Component({
   selector: 'app-get-quote',
@@ -13,12 +14,14 @@ import Swal from 'sweetalert2';
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule],
 })
-export class GetQuoteComponent implements OnInit, OnDestroy {
+export class GetQuoteComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('dobInput') dobInput!: ElementRef;
+
   headerImage: string = 'assets/images/header_en.png';
   uploadedFiles: string[] = [];
   dropdownOpen = false;
 
-  // Country list with flags (10 countries)
+  // Country list
   countries = [
     { name: 'Cambodia', code: '+855', flag: 'assets/flags/cambodia.png' },
     { name: 'Vietnam', code: '+84', flag: 'assets/flags/vietnam.png' },
@@ -49,18 +52,30 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // Update header image based on language
     this.updateHeaderImage(this.translate.currentLang || 'en');
+
     this.translate.onLangChange.subscribe((event) => {
       this.updateHeaderImage(event.lang);
     });
 
-    // Detect click outside dropdown
     document.addEventListener('click', this.onOutsideClick);
+  }
+
+  ngAfterViewInit(): void {
+    flatpickr(this.dobInput.nativeElement, {
+    dateFormat: 'Y-m-d',
+    maxDate: 'today',
+    defaultDate: this.formData.dob || undefined, // <- use undefined instead of null
+  });
+
   }
 
   ngOnDestroy(): void {
     document.removeEventListener('click', this.onOutsideClick);
+  }
+
+  get isKhmer(): boolean {
+    return this.translate.currentLang === 'km';
   }
 
   updateHeaderImage(lang: string): void {
@@ -70,7 +85,6 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
         : 'assets/images/header_en.png';
   }
 
-  // Dropdown Controls
   toggleDropdown(): void {
     this.dropdownOpen = !this.dropdownOpen;
   }
@@ -88,7 +102,6 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     }
   };
 
-  // File Upload
   onFileSelected(event: any): void {
     const files: FileList = event.target.files;
     if (!files) return;
@@ -132,10 +145,9 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     this.uploadedFiles.splice(index, 1);
   }
 
-  // Image Viewer
   viewImage(imageUrl: string): void {
     Swal.fire({
-      imageUrl: imageUrl,
+      imageUrl,
       imageAlt: 'Uploaded Image',
       showConfirmButton: false,
       showCloseButton: true,
@@ -145,7 +157,6 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     });
   }
 
-  // Navigation & Validation
   goToSelectPlan(): void {
     if (
       !this.formData.fullName.trim() ||
@@ -171,13 +182,12 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
     this.router.navigate(['/select-plan']);
   }
 
-  // Toast Notifications
   showToast(message: string, icon: 'success' | 'error' = 'error'): void {
     const isMobile = window.innerWidth < 768;
     Swal.fire({
       toast: true,
       position: isMobile ? 'bottom' : 'top-end',
-      icon: icon,
+      icon,
       title: message,
       showConfirmButton: false,
       timer: 4000,
@@ -185,15 +195,9 @@ export class GetQuoteComponent implements OnInit, OnDestroy {
       background: '#fff',
       color: '#000',
       iconColor: icon === 'success' ? 'green' : 'red',
-      showClass: {
-        popup: 'swal2-show swal2-toast-custom',
-      },
-      hideClass: {
-        popup: 'swal2-hide swal2-toast-custom',
-      },
-      customClass: {
-        popup: 'swal2-toast-custom',
-      },
+      showClass: { popup: 'swal2-show swal2-toast-custom' },
+      hideClass: { popup: 'swal2-hide swal2-toast-custom' },
+      customClass: { popup: 'swal2-toast-custom' },
     });
   }
 }

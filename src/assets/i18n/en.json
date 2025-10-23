@@ -195,27 +195,27 @@
 
   "CUSTOMER": {
     "TITLE": "Customer Information",
-    "NAME_LABEL": "Name:",
+    "NAME_LABEL": "Name",
     "NAME_VALUE": "{{name}}",
-    "GENDER_LABEL": "Gender:",
+    "GENDER_LABEL": "Gender",
     "GENDER_VALUE": "{{gender}}",
-    "DOB_LABEL": "Date of Birth:",
+    "DOB_LABEL": "Date of Birth",
     "DOB_VALUE": "{{dob}}"
   },
 
   "CONTACT": {
     "TITLE": "Contact Information",
-    "PHONE_LABEL": "Phone:",
+    "PHONE_LABEL": "Phone",
     "PHONE_VALUE": "{{phone}}",
-    "EMAIL_LABEL": "Email:",
+    "EMAIL_LABEL": "Email",
     "EMAIL_VALUE": "{{email}}",
-    "LOCATION_LABEL": "Location:",
+    "LOCATION_LABEL": "Location",
     "LOCATION_VALUE": "{{location}}"
   },
 
   "NATIONAL_ID": {
     "TITLE": "National ID",
-    "NUM_LABEL": "ID Number:",
+    "NUM_LABEL": "ID Number",
     "NUM_VALUE": "{{id}}"
   }
   
@@ -290,9 +290,10 @@
     "ADDRESS":"please enter your address",
     "ID":"please upload both front and back of your ID",
     "GENDER":"please select your gender",
-    "UPLOAD_ID":"can upload only 2 images"
+    "UPLOAD_ID":"can upload only 2 images",
+    "ANSWER":"please select answer"
   },
- 
+ "SELECT_FILES": "Select files",
   "Active": "Active",
   "Paid": "Paid",
   "Male": "Male",

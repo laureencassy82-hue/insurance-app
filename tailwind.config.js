@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+      khmer: ['"Noto Sans Khmer"', 'sans-serif'],
+    },
+
       colors: {
         // Primary colors
         'primary-yellow': '#fbbf24', // yellow accent
